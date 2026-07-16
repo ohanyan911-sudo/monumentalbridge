@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Մոնումենտալ Կամուրջ / Monumental Bridge</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #ECF4FD;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Վերևի դեկորատիվ գոտին */
+        header {
+            width: 100%;
+        }
+        .line-grey   { height: 10px; background-color: #F2F2F2; }
+        .line-dark   { height: 7px;  background-color: #333333; }
+        .line-yellow { height: 7px;  background-color: #F4E6B9; }
+        .line-image  { 
+            height: 40px; 
+            background-image: url('images/01.jpg'); 
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: auto 100%;
+        }
+
+
+        /* Նավիգացիոն մենյու */
+        nav {
+            background-color: #FEF3FE;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #E1F0FD;
+        }
+        nav a {
+            color: #652286;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+        nav a:hover {
+            color: #FD7E00;
+        }
+
+        /* Հիմնական կոնտեյներ - Ճշգրիտ կրկնում է «Իմ Մասին» և «Կապ» էջերը */
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        /* Վերնագրի ոճը */
+        h1 {
+            color: #652286;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #F4E6B9;
+            padding-bottom: 10px;
+        }
+        
+        /* Ենթավերնագրի ոճը՝ առանց թավի (normal) */
+        .style3 {
+            color: #FD7E00; 
+            margin-bottom: 30px; 
+            letter-spacing: 1px; 
+            font-size: 18px;
+            font-weight: normal;
+            text-align: left; /* Համապատասխանեցված է ձախ կողմին */
+        }
+
+        /* Տեքստի ձևավորումը՝ «Իմ Մասին» էջի պես ձախից հավասարեցված և տողագլխով */
+        .welcome-text p {
+            text-align: justify;
+            text-indent: 30px; 
+            margin-bottom: 20px;
+            font-size: 17px;
+            color: #333333;
+            line-height: 1.8;
+        }
+
+        /* Ուղղորդող կոճակների բլոկ */
+        .navigation-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 180px;
+            background-color: #FEF3FE;
+            border: 1px solid #E1F0FD;
+            padding: 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #652286;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            text-align: center; /* Կոճակների ներսի տեքստը մնում է կենտրոնում */
+        }
+
+        .card:hover {
+            background-color: #652286;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(101,34,134,0.2);
+        }
+
+        /* Հեղինակի ասույթը ներքևում */
+        .style2 {
+            color: #777777;
+            font-size: 15px;
+            border-top: 1px solid #F4E6B9;
+            padding-top: 20px;
+            margin-top: 50px;
+            text-align: right;
+            font-weight: bold;
+        }
+		/* Կիսվելու կոճակների ոճերը */
+.share-section {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #F4E6B9;
+    text-align: center;
+}
+.share-title {
+    color: #652286;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.share-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.share-fb { background-color: #3b5998; }
+.share-tw { background-color: #000000; }
+.share-wa { background-color: #25D366; }
+.share-tg { background-color: #0088cc; }
+.share-copy { background-color: #652286; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="line-grey"></div>
+        <div class="line-dark"></div>
+        <div class="line-yellow"></div>
+        <div class="line-dark"></div>
+        <div class="line-image"></div>
+        <div class="line-yellow"></div>
+        <div class="line-dark"></div>
+    </header>
+
+<div style="position: fixed; top: 95px; left: 15px; z-index: 100;">
+    <iframe src="logo60.html" style="width: 250x; height: 250px; border: none;" scrolling="no"></iframe>
+</div>
+
+    <nav>
+        <a href="index.html" style="color: #FD7E00;">ԳԼԽԱՎՈՐ</a>
+        <a href="aboutme.html">ԻՄ ՄԱՍԻՆ</a>
+        <a href="works.html">ԳՈՐԾԵՐ</a>
+        <a href="tools.html">ԳՈՐԾԻՔՆԵՐ</a>
+        <a href="contact.html">ԿԱՊ</a>
+    </nav>
+
+    <main class="container">
+        <h1>Մոնումենտալ Կամուրջ</h1>
+        <div class="style3">ԼԵԶՎԱՄՏԱԾՈՂ ՏԻԵԶԵՐՔ · 60-ԱԿԱՆ ՊԱՐԱԴԻԳՄ · ԱՆՎԵՐՋ ՈՐՈՆՈՒՄ</div>
+        
+        <div class="welcome-text">
+            <p>Բարի գալուստ մի տարածք, որտեղ միավորվում են անցյալն ու ներկան, ճշգրիտ գիտությունները, լեզուն, երաժշտությունն ու փիլիսոփայությունը։ Սա հարթակ է նրանց համար, ովքեր փնտրում են տիեզերքի թաքնված կոդերը և ցանկանում են բացահայտել ճշմարտությունը։</p>
+            <p>Այստեղ ներկայացված են 30 տարվա փնտրտուքի և ուսումնասիրությունների արդյունքները, որոնց ակունքները տանում են դեպի հնագույն Արատտայի մշակույթ։</p>
+        </div>
+
+        <!-- Կոճակների հատվածը, որը ներդաշնակ է ընդհանուր ոճին -->
+        <div class="navigation-cards">
+            <a href="aboutme.html" class="card">
+                <div>ԻՄ ՄԱՍԻՆ</div>
+                <span style="font-size: 12px; font-weight: normal; display: block; margin-top: 5px; color: inherit;">Կարդալ պատմությունը</span>
+            </a>
+            <a href="works.html" class="card">
+                <div>ԳՈՐԾԵՐ</div>
+                <span style="font-size: 12px; font-weight: normal; display: block; margin-top: 5px; color: inherit;">Տրակտատներ և էտյուդներ</span>
+            </a>
+            <a href="tools.html" class="card">
+                <div>ԳՈՐԾԻՔՆԵՐ</div>
+                <span style="font-size: 12px; font-weight: normal; display: block; margin-top: 5px; color: inherit;">60-ական համակարգ</span>
+            </a>
+        </div>
+        
+        <div class="style2">
+            «Մենք կառուցում ենք կամուրջներ այնտեղ, ուր մյուսները տեսնում են միայն անդունդներ։»
+        </div>
+		<div class="share-section">
+    <div class="share-title">ԿԻՍՎԵԼ</div>
+    <div class="share-buttons">
+        <span class="share-btn share-fb" onClick="shareFacebook()">Facebook</span>
+        <span class="share-btn share-tw" onClick="shareTwitter()">X (Twitter)</span>
+        <span class="share-btn share-wa" onClick="shareWhatsApp()">WhatsApp</span>
+        <span class="share-btn share-tg" onClick="shareTelegram()">Telegram</span>
+        <span class="share-btn share-copy" onClick="copyLink()">Պատճենել հղումը</span>
+    </div>
+</div>
+		<div style="margin-top: 30px; padding-top: 15px; border-top: 1px dashed #F4E6B9; text-align: center; font-size: 13px; color: #777777;">
+            © 2026 Մոնումենտալ Կամուրջ: Բոլոր իրավունքները պաշտպանված են: Նյութերի տարածումն առանց աղբյուրին հղում կատարելու արգելվում է:
+        </div>
+    </main>
+<script>
+function shareFacebook() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareTwitter() {
+    window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareWhatsApp() {
+    window.open('https://wa.me/?text=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareTelegram() {
+    window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href), '_blank');
+}
+function copyLink() {
+    const el = document.createElement('textarea');
+    el.value = window.location.href;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('Հղումը պատճենված է');
+}
+</script>
+</body>
+</html>
