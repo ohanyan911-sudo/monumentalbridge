@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kernel60-ի Գործիքակազմ - Մոնումենտալ Կամուրջ</title>
+    <style>
+        body, input, button, select, textarea, div, p, span, strong {
+            font-family: sans-serif !important;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ECF4FD;
+            color: #333333;
+            line-height: 1.6;
+            transition: background-color 0.8s ease, color 0.8s ease;
+        }
+        header { width: 100%; }
+        .line-grey   { height: 10px; background-color: #F2F2F2; }
+        .line-dark   { height: 7px;  background-color: #333333; }
+        .line-yellow { height: 7px;  background-color: #F4E6B9; }
+        .line-dark   { height: 7px;  background-color: #333333; }
+        .line-image  { 
+            height: 40px; 
+            background-image: url('images/01.jpg'); 
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: auto 100%;
+        }
+        nav {
+            background-color: #FEF3FE;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #E1F0FD;
+        }
+        nav a {
+            color: #652286;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+        nav a:hover { color: #FD7E00; }
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        h1, .container h1 {
+            color: #652286 !important;
+            font-size: 28px !important;
+            margin-top: 0 !important;
+            margin-bottom: 25px !important;
+            border-bottom: 2px solid #F4E6B9 !important;
+            padding-bottom: 10px !important;
+            text-shadow: none !important;
+            font-weight: bold !important;
+            text-align: left !important;
+        }
+        .style2 {
+            color: #777777;
+            font-size: 15px;
+            border-top: 1px solid #F4E6B9;
+            padding-top: 20px;
+            margin-top: 50px;
+            text-align: right;
+            font-weight: bold;
+        }
+        .container * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        .btn-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 12px 0;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .btn-row button {
+            width: auto;
+            min-width: 110px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            min-height: 36px;
+            text-align: center;
+            color: white;
+        }
+        .btn-interpret { background: #c62828 !important; }
+        .btn-history   { background: #ef6c00 !important; }
+        .btn-settings  { background: #4527a0 !important; }
+        .btn-play  { background: #007bff !important; }
+        .btn-show  { background: #28a745 !important; }
+        .btn-calc  { background: #ffc107 !important; color: #111 !important; }
+        .btn-zodiac { background: #652286 !important; color: white !important; }
+        .btn-dna  { background: #00695c !important; color: white !important; }
+        .btn-row button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .container input[type="text"] {
+            padding: 14px;
+            width: 100%;
+            border: 2px solid #7e22ce;
+            border-radius: 10px;
+            font-size: 16px;
+            background: rgba(101, 34, 134, 0.03);
+            color: #333333;
+            text-align: center;
+            margin: 15px 0;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .container input[type="text"]:focus {
+            border-color: #a855f7;
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.3);
+            background: rgba(101, 34, 134, 0.06);
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #8a00ff;
+            border-radius: 10px;
+            background: #FEF3FE;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+        }
+        #result h3 {
+            color: #652286 !important;
+            font-size: 19px !important;
+            margin-top: 15px !important;
+            margin-bottom: 15px !important;
+            font-weight: bold !important;
+            border-bottom: 1px solid #F4E6B9 !important;
+            padding-bottom: 5px !important;
+            text-shadow: none !important;
+            text-align: left !important;
+        }
+        .letter-block {
+            margin-bottom: 12px;
+            padding: 12px;
+            border-left: 4px solid #8a00ff;
+            background: rgba(138, 0, 255, 0.03);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: block;
+        }
+        .letter-header { display: flex; justify-content: space-between; align-items: center; }
+        .letter-title { font-weight: bold; font-size: 1.1rem; }
+        .letter-description {
+            margin-top: 12px;
+            padding: 12px;
+            background: #ffffff;
+            border-radius: 8px;
+            border-left: 3px solid #ff00ff;
+            line-height: 1.7;
+            display: none;
+            font-size: 16px;
+            color: #333333;
+            text-align: justify;
+        }
+        .interpretation-block {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ff00ff;
+            border-radius: 10px;
+            background: rgba(255, 0, 255, 0.02);
+            text-align: left;
+            line-height: 1.5;
+        }
+        .color-coded {
+            margin: 4px 4px 4px 0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .calculation-display {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(240, 240, 255, 0.9);
+            border-radius: 10px;
+            border: 2px solid #652286;
+            text-align: left;
+            line-height: 1.8;
+        }
+        .calculation-display h3 {
+            color: #652286;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #F4E6B9;
+            padding-bottom: 5px;
+        }
+        .calc-item {
+            margin: 5px 0;
+            padding: 5px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #4e008e;
+        }
+        .history-panel, .settings-panel {
+            margin-top: 15px;
+            padding: 15px;
+            background: #FEF3FE;
+            border-radius: 10px;
+            text-align: left;
+            display: none;
+            color: #333333;
+        }
+        .history-panel { border: 1px solid #8a00ff; max-height: 200px; overflow-y: auto; }
+        .settings-panel { border: 1px solid #ff00ff; }
+        .settings-panel label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #652286;
+        }
+        .history-item {
+            padding: 8px 12px;
+            margin: 4px 0;
+            background: rgba(138, 0, 255, 0.03);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            color: #652286;
+            font-weight: bold;
+        }
+        .history-item:hover { background: rgba(138, 0, 255, 0.08); }
+        #loading { display: none; margin: 10px auto; color: #a855f7; font-size: 1.1rem; text-align: center; }
+        .footer { margin-top: 25px; font-size: 0.85rem; color: #652286; text-align: center; font-weight: bold; }
+        .share-section {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #F4E6B9;
+            text-align: center;
+        }
+        .share-title {
+            color: #652286;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .share-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .share-fb { background-color: #3b5998; }
+        .share-tw { background-color: #000000; }
+        .share-wa { background-color: #25D366; }
+        .share-tg { background-color: #0088cc; }
+        .share-copy { background-color: #652286; }
+        @media (max-width: 480px) {
+            .btn-row { flex-direction: column; }
+            .btn-row button { width: 100%; }
+        }
+        .zodiac-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            table-layout: fixed;
+        }
+        .zodiac-table th, .zodiac-table td {
+            border: 1px solid #F4E6B9;
+            padding: 8px;
+            text-align: left;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .zodiac-table th {
+            background: #652286;
+            color: white;
+            font-weight: bold;
+        }
+        .zodiac-table tr.highlight td {
+            background: #d4edda !important;
+            color: inherit;
+        }
+        .zodiac-table th:nth-child(1) { width: 17%; }
+        .zodiac-table th:nth-child(2) { width: 20%; }
+        .zodiac-table th:nth-child(3) { width: 23%; }
+        .zodiac-table th:nth-child(4) { width: 30%; }
+        .zodiac-table th:nth-child(5) { width: 10%; }
+        .zodiac-table th:nth-child(5), .zodiac-table td:nth-child(5) {
+            text-align: center;
+        }
+        .zodiac-table td:nth-child(2),
+        .zodiac-table td:nth-child(3) {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="line-grey"></div>
+        <div class="line-dark"></div>
+        <div class="line-yellow"></div>
+        <div class="line-dark"></div>
+        <div class="line-image"></div>
+        <div class="line-yellow"></div>
+        <div class="line-dark"></div>
+    </header>
+    
+    <div style="position: fixed; top: 95px; left: 15px; z-index: 100;">
+    <iframe src="logo60.html" style="width: 250px; height: 250px; border: none;" scrolling="no"></iframe>
+    </div>
+    
+    <nav>
+        <a href="index.html">ԳԼԽԱՎՈՐ</a>
+        <a href="aboutme.html">ԻՄ ՄԱՍԻՆ</a>
+        <a href="works.html">ԳՈՐԾԵՐ</a>
+        <a href="tools.html" style="color: #FD7E00;">ԳՈՐԾԻՔՆԵՐ</a>
+        <a href="contact.html">ԿԱՊ</a>
+    </nav>
+    <main class="container">
+        <h1>Kernel60-ի Գործիքակազմ</h1>
+        <p>Մուտքագրեք հայերեն տառ, բառ կամ բառեր՝ դրանց մեջ թաքնված տիեզերական իմաստը, ձայնը, գույնը, հաշվարկը, աստղային ուղին և գենետիկական ստորագրությունը բացահայտելու համար</p>
+
+        <!-- Վերևի շարք՝ 6 կոճակ -->
+        <div class="btn-row">
+            <button class="btn-interpret" id="btnInterpret" onClick="interpretWord()">ՄԵԿՆԱԲԱՆԵԼ</button>
+            <button class="btn-play" id="btnPlay" onClick="playWord()">Հնչեցնել</button>
+            <button class="btn-show" id="btnShow" onClick="showColor()">Ցուցադրել</button>
+            <button class="btn-calc" id="btnCalc" onClick="calculateWord()">Հաշվարկել</button>
+            <button class="btn-zodiac" id="btnZodiac" onClick="showZodiac()">ԿԵՆԴԱՆԱԿԵՐՊ</button>
+            <button class="btn-dna" id="btnDna" onClick="dnaAnalysis()">ԴՆԹ ԱՆԱԼԻԶ</button>
+        </div>
+
+        <input type="text" id="wordInput" placeholder="Մուտքագրեք տառ, բառ կամ բառեր (օրինակ Արատտա)" />
+
+        <!-- Ներքևի շարք՝ 2 կոճակ -->
+        <div class="btn-row">
+            <button class="btn-history" id="btnHistory" onClick="toggleHistory()">ՊԱՏՄՈՒԹՅՈՒՆ</button>
+            <button class="btn-settings" id="btnSettings" onClick="toggleSettings()">ԿԱՐԳԱՎՈՐՈՒՄՆԵՐ</button>
+        </div>
+
+        <div id="loading">⏳ Խնդրում եմ սպասել...</div>
+
+        <div class="history-panel" id="historyPanel">
+            <h3>Վերջին որոնումները</h3>
+            <div id="historyItems"></div>
+        </div>
+
+        <div class="settings-panel" id="settingsPanel">
+            <h3>Կարգավորումներ</h3>
+            <label>
+                <input type="checkbox" id="saveHistory" checked> Պահպանել որոնումների պատմությունը
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" id="showDescriptions" checked> Ավտոմատ ցուցադրել նկարագրությունները
+            </label>
+            <br>
+            <button onClick="clearHistory()" style="width: auto; margin-top: 10px;">Մաքրել պատմությունը</button>
+        </div>
+
+        <div id="result"></div>
+
+        <div class="footer">
+            <p>Յուրաքանչյուր տառի իմաստը վերցված է «Լեզվամտածող Աշխարհը» տեսլականից</p>
+        </div>
+
+        <div class="style2">
+            «Մենք կառուցում ենք կամուրջներ այնտեղ, ուր մյուսները տեսնում են միայն անդունդներ։»
+        </div>
+
+        <div class="share-section">
+            <div class="share-title">ԿԻՍՎԵԼ</div>
+            <div class="share-buttons">
+                <span class="share-btn share-fb" onClick="shareFacebook()">Facebook</span>
+                <span class="share-btn share-tw" onClick="shareTwitter()">X (Twitter)</span>
+                <span class="share-btn share-wa" onClick="shareWhatsApp()">WhatsApp</span>
+                <span class="share-btn share-tg" onClick="shareTelegram()">Telegram</span>
+                <span class="share-btn share-copy" onClick="copyLink()">Պատճենել հղումը</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px dashed #F4E6B9; text-align: center; font-size: 13px; color: #777777;">
+            <div align="justify">© 2026 Մոնումենտալ Կամուրջ: Այս կայքի բովանդակությամբ կարող եք ազատորեն կիսվել համացանցում՝ հղում տալով սկզբնաղբյուրին: Տպելու, տպագրելու կամ գիրք կազմելու միջոցով, կամ այլ ֆիզիկական ձևով և որևէ տեխնոլոգիական կրիչով տարածելը առանց հեղինակի գրավոր համաձայնության արգելվում է: Գիտական, կրթական կամ ստեղծագործական աշխատանքներում մեջբերումները թույլատրելի են պայմանով, որ պարտադիր պետք է նշվի կոնկրետ էջի ամբողջական հասցեն (URL) և աշխատության վերնագիրը: Առանց հեղինակի գրավոր համաձայնության՝ արգելվում է նաև կայքի նյութերի թարգմանությունը որևէ լեզվով և դրանց տարածումը այլ լեզուներով:
+            </div>
+        </div>
+    </main>
+
+<script>
+// ==== 1. Տառիմաստների բազա ====
+const letterMeanings = {
+    "Ա": "Արարման հոսք, սկիզբ, աստ",
+    "Բ": "Բան",
+    "Գ": "Գոյություն",
+    "Դ": "Դարպաս գոյության",
+    "Ե": "Սահուն հոսք",
+    "Զ": "Զորություն, պոտենցիալ",
+    "Է": "Էություն",
+    "Ը": "Ընթացք անվերջանալի",
+    "Թ": "Հոսքի թրթիռ",
+    "Ժ": "Ժամանակ",
+    "Ի": "Իմաստ",
+    "Լ": "Լույս տեսանելի",
+
+    "Խ": "Խտացման զպրտիչ",
+    "Ծ": "Ծնհուշ ծնեբեկման",
+    "Կ": "Կրկնություն ստեղծական",
+    "Հ": "Հսկում արարման",
+    "Ձ": "Ձևի կաղապար",
+    "Ղ": "Խտացում",
+    "Ճ": "Ճիչ ծնեբեկման",
+    "Մ": "Նյութի մարմնավորում",
+    "Յ": "Հոսքի հաղորդակ",
+    "Ն": "Ներքին Էություն",
+    "Շ": "Շարժում զգուշավոր",
+    "Ո": "Զպրտիչ հավաքող",
+    "Չ": "Հաստատման կամ հերքման շեմ",
+    "Պ": "Զորության պահոց",
+    "Ջ": "Կոհերենտ ալիք",
+    "Ռ": "Ռեզոնանսի ռիթմ",
+    "Ս": "Ցրող զպրտիչ",
+    "Վ": "Կլանող պահոց",
+    "Տ": "Զորության հարված",
+    "Ր": "Եզր ամբողջացնող",
+    "Ց": "Ցռել, սփռել",
+    "ՈՒ": "Ուռկան զորության",
+    "Փ": "Զորության պոռթկում",
+    "Ք": "Քանքար",
+    "և": "Կամրջում, կապ, անցում",
+    "Օ": "Օծություն",
+    "Ֆ": "Արգասիք ճոխության"
+};
+
+// ==== 2. Իմաստային կատեգորիաներ ====
+const meaningCategories = {
+    "Արարում": ["Ա", "Բ", "Դ", "Ե", "Ը", "Կ", "Հ", "Ձ"],
+    "Զորություն": ["Զ", "ՈՒ", "Փ", "Տ", "Պ", "Ռ"],
+    "Լույս": ["Լ", "Ծ", "Ս", "Ֆ"],
+    "Շարժում": ["Ը", "Շ", "Հ", "Ց", "Ջ"],
+    "Կապ": ["Յ", "և", "Ր", "Ն", "Մ"],
+    "Խտացում": ["Խ", "Ղ", "Ջ", "Ծ"],
+    "Ներքին էություն": ["Ն", "Է", "Մ", "Վ"],
+    "Սահունություն": ["Ե", "Շ", "Հ", "Ց"],
+    "Ամբողջացում": ["Ր", "Ռ", "Պ", "Տ"],
+    "Իմաստ": ["Ի", "Ք", "Օ", "Ֆ"]
+};
+
+// ==== 3. Նուկլեոտիդային խմբեր ====
+const nucleotideGroups = {
+    "A": ["Ա", "Բ", "Դ", "Ե", "Զ", "Ծ", "Հ", "Ձ", "Ղ", "Չ"],
+    "T": ["Թ", "Ի", "Լ", "Խ", "Կ", "Մ", "Յ", "Ն", "Շ", "Ո"],
+    "G": ["Գ", "Է", "Ը", "Ժ", "Պ", "Ջ", "Ռ", "Ս", "Վ", "Տ"],
+    "C": ["Ճ", "Ց", "ՈՒ", "Փ", "Ք", "և", "Օ", "Ֆ", "Ր"]
+};
+
+// ==== 4. Նուկլեոտիդների տառ առ տառ իմաստային հոսքեր ====
+const nucleotideLetterFlows = {
+    "A": {
+        name: "Ադենին",
+        flow: "Արարման հոսք, սկիզբ, աստ → Դարպաս գոյության → Սահուն հոսք → Ներքին էություն → Իմաստ → Ներքին էություն"
+    },
+    "T": {
+        name: "Թիմին",
+        flow: "Հոսքի թրթիռ → Իմաստ → Նյութի մարմնավորում → Իմաստ → Ներքին էություն"
+    },
+    "G": {
+        name: "Գուանին",
+        flow: "Գոյություն → Ուռկան զորության → Արարման հոսք, սկիզբ, աստ → Ներքին էություն → Իմաստ → Ներքին էություն"
+    },
+    "C": {
+        name: "Ցիտոզին",
+        flow: "Ցռել, սփռել → Իմաստ → Զորության հարված → Զպրտիչ հավաքող → Զորություն, պոտենցիալ → Իմաստ → Ներքին էություն"
+    }
+};
+
+// ==== 5. Ամինաթթուների բազա ====
+const aminoAcids = {
+    "TTT": "Ֆենիլալանին (Phenylalanine)",
+    "TTC": "Ֆենիլալանին (Phenylalanine)",
+    "TTA": "Լեյցին (Leucine)",
+    "TTG": "Լեյցին (Leucine)",
+    "TCT": "Սերին (Serine)",
+    "TCC": "Սերին (Serine)",
+    "TCA": "Սերին (Serine)",
+    "TCG": "Սերին (Serine)",
+    "TAT": "Թիրոզին (Tyrosine)",
+    "TAC": "Թիրոզին (Tyrosine)",
+    "TAA": "Ստոպ-կոդոն (Ochre)",
+    "TAG": "Ստոպ-կոդոն (Amber)",
+    "TGT": "Ցիստեին (Cysteine)",
+    "TGC": "Ցիստեին (Cysteine)",
+    "TGA": "Ստոպ-կոդոն (Opal)",
+    "TGG": "Տրիպտոֆան (Tryptophan)",
+    "CTT": "Լեյցին (Leucine)",
+    "CTC": "Լեյցին (Leucine)",
+    "CTA": "Լեյցին (Leucine)",
+    "CTG": "Լեյցին (Leucine)",
+    "CCT": "Պրոլին (Proline)",
+    "CCC": "Պրոլին (Proline)",
+    "CCA": "Պրոլին (Proline)",
+    "CCG": "Պրոլին (Proline)",
+    "CAT": "Հիստիդին (Histidine)",
+    "CAC": "Հիստիդին (Histidine)",
+    "CAA": "Գլուտամին (Glutamine)",
+    "CAG": "Գլուտամին (Glutamine)",
+    "CGT": "Արգինին (Arginine)",
+    "CGC": "Արգինին (Arginine)",
+    "CGA": "Արգինին (Arginine)",
+    "CGG": "Արգինին (Arginine)",
+    "ATT": "Իզոլեյցին (Isoleucine)",
+    "ATC": "Իզոլեյցին (Isoleucine)",
+    "ATA": "Իզոլեյցին (Isoleucine)",
+    "ATG": "Մեթիոնին (Methionine)",
+    "ACT": "Թրեոնին (Threonine)",
+    "ACC": "Թրեոնին (Threonine)",
+    "ACA": "Թրեոնին (Threonine)",
+    "ACG": "Թրեոնին (Threonine)",
+    "AAT": "Ասպարագին (Asparagine)",
+    "AAC": "Ասպարագին (Asparagine)",
+    "AAA": "Լիզին (Lysine)",
+    "AAG": "Լիզին (Lysine)",
+    "AGT": "Սերին (Serine)",
+    "AGC": "Սերին (Serine)",
+    "AGA": "Արգինին (Arginine)",
+    "AGG": "Արգինին (Arginine)",
+    "GTT": "Վալին (Valine)",
+    "GTC": "Վալին (Valine)",
+    "GTA": "Վալին (Valine)",
+    "GTG": "Վալին (Valine)",
+    "GCT": "Ալանին (Alanine)",
+    "GCC": "Ալանին (Alanine)",
+    "GCA": "Ալանին (Alanine)",
+    "GCG": "Ալանին (Alanine)",
+    "GAT": "Ասպարտաթթու (Aspartic acid)",
+    "GAC": "Ասպարտաթթու (Aspartic acid)",
+    "GAA": "Գլուտամինաթթու (Glutamic acid)",
+    "GAG": "Գլուտամինաթթու (Glutamic acid)",
+    "GGT": "Գլիցին (Glycine)",
+    "GGC": "Գլիցին (Glycine)",
+    "GGA": "Գլիցին (Glycine)",
+    "GGG": "Գլիցին (Glycine)"
+};
+
+// ==== 6. Բառի փոխակերպումը նուկլեոտիդների ====
+function convertToNucleotides(word) {
+    const result = [];
+    const processed = word.toUpperCase();
+    
+    for (let i = 0; i < processed.length; i++) {
+        let letter = processed[i];
+        
+        if ((letter === 'ե' || letter === 'Ե') && i + 1 < processed.length && (processed[i + 1] === 'վ' || processed[i + 1] === 'Վ')) {
+            letter = 'և';
+            i++;
+        }
+        else if ((letter === 'ո' || letter === 'Ո') && i + 1 < processed.length && (processed[i + 1] === 'ւ' || processed[i + 1] === 'Ւ')) {
+            letter = 'ՈՒ';
+            i++;
+        }
+        
+        let nucleotide = null;
+        for (const nuc in nucleotideGroups) {
+            if (nucleotideGroups[nuc].includes(letter)) {
+                nucleotide = nuc;
+                break;
+            }
+        }
+        
+        result.push({
+            letter: letter,
+            nucleotide: nucleotide,
+            nucleotideName: nucleotideLetterFlows[nucleotide].name,
+            nucleotideFlow: nucleotideLetterFlows[nucleotide].flow
+        });
+    }
+    
+    return result;
+}
+
+// ==== 7. ԴՆԹ անալիզի ֆունկցիա ====
+function dnaAnalysis() {
+    const word = document.getElementById('wordInput').value.trim();
+    const resultDiv = document.getElementById('result');
+    
+    document.getElementById('historyPanel').style.display = 'none';
+    document.getElementById('settingsPanel').style.display = 'none';
+    
+    resultDiv.innerHTML = '';
+    
+    if (!word) {
+        resultDiv.innerHTML = "<p>Խնդրում եմ մուտքագրել տառ կամ բառ</p>";
+        return;
+    }
+    
+    updateHistory(word);
+    
+    const converted = convertToNucleotides(word);
+    
+    let signature = '';
+    converted.forEach(item => {
+        signature += item.nucleotide;
+    });
+    
+    let letterDetails = '';
+    converted.forEach(item => {
+        letterDetails += `
+            <div class="calc-item">${item.letter} → <strong>${item.nucleotide}</strong> (${item.nucleotideName}՝ ${item.nucleotideFlow})</div>
+        `;
+    });
+    
+    const codons = [];
+    for (let i = 0; i < signature.length; i += 3) {
+        codons.push(signature.slice(i, i + 3));
+    }
+    
+    let codonDetails = '';
+    codons.forEach((codon, index) => {
+        let amino = aminoAcids[codon] || '—';
+        let quality = '';
+        
+        if (amino.includes('Ստոպ')) {
+            quality = 'Իմաստային որակը՝ լռություն, ավարտ, շեմ';
+        }
+        
+        if (codon.length === 3) {
+            codonDetails += `
+                <div class="calc-item">
+                    Կոդոն ${index + 1}՝ <strong>${codon}</strong>
+                    ${amino !== '—' ? `<br>Իրական ամինաթթուն՝ <strong>${amino}</strong>` : ''}
+                    ${quality ? `<br>${quality}` : ''}
+                </div>
+            `;
+        } else {
+            codonDetails += `
+                <div class="calc-item">
+                    Ազատ նուկլեոտիդ՝ <strong>${codon}</strong>
+                </div>
+            `;
+        }
+    });
+    
+    const counts = { A: 0, T: 0, G: 0, C: 0 };
+    signature.split('').forEach(n => {
+        if (counts[n] !== undefined) counts[n]++;
+    });
+    
+    let dominant = '—';
+    let maxCount = 0;
+    for (const n in counts) {
+        if (counts[n] > maxCount) {
+            maxCount = counts[n];
+            dominant = n;
+        }
+    }
+    
+    let meaningFlow = [];
+    converted.forEach(item => {
+        if (item.nucleotide === 'A') meaningFlow.push('Արարում');
+        else if (item.nucleotide === 'T') meaningFlow.push('Թրթիռ');
+        else if (item.nucleotide === 'G') meaningFlow.push('Գոյություն');
+        else if (item.nucleotide === 'C') meaningFlow.push('Սփռում');
+    });
+    
+    resultDiv.innerHTML = `
+        <div class="calculation-display">
+            <h3>🧬 ԴՆԹ Անալիզ՝ «${word}»</h3>
+            <div style="margin-bottom: 10px;">
+                <strong>Տառերի փոխակերպումը՝</strong>
+                ${letterDetails}
+            </div>
+            <div class="calc-item"><strong>Գենետիկական ստորագրություն՝</strong> ${signature}</div>
+            <div class="calc-item"><strong>Գերիշխող նուկլեոտիդ՝</strong> ${dominant} (${nucleotideLetterFlows[dominant].name}՝ ${nucleotideLetterFlows[dominant].flow})</div>
+            <div class="calc-item"><strong>Նուկլեոտիդների քանակը՝</strong> ${signature.length}</div>
+            <div style="margin-top: 10px;">
+                <strong>Կոդոնների վերլուծություն՝</strong>
+                ${codonDetails}
+            </div>
+            <div class="calc-item" style="margin-top: 10px;"><strong>Իմաստային հոսք՝</strong> ${meaningFlow.join(' → ')}</div>
+        </div>
+    `;
+}
+
+// ==== 8. Մյուս ֆունկցիաները ====
+function interpretWord() {
+    const word = document.getElementById('wordInput').value.trim();
+    const resultDiv = document.getElementById('result');
+    
+    document.getElementById('historyPanel').style.display = 'none';
+    document.getElementById('settingsPanel').style.display = 'none';
+    
+    resultDiv.innerHTML = '';
+    
+    if (!word) {
+        resultDiv.innerHTML = "<p>Խնդրում եմ մուտքագրել տառ կամ բառ</p>";
+        return;
+    }
+    
+    updateHistory(word);
+    
+    const words = word.split(/\s+/);
+    
+    let letterBreakdown = "";
+    let fullInterpretation = "";
+    
+    const colorPalette = ["#ff6b6b", "#4ecdc4", "#ffbe0b", "#9d4edd", "#fb5607", "#3a86ff", "#8338ec", "#ff006e", "#8ac926", "#1982c4", "#6a4c93", "#f15bb5"];
+    
+    for (let w = 0; w < words.length; w++) {
+        const currentWord = words[w];
+        const processedWord = currentWord;
+        
+        letterBreakdown += `<div style="margin-top: 15px;"><strong>«${currentWord}»</strong></div>`;
+        
+        for (let i = 0; i < processedWord.length; i++) {
+            let letter = processedWord[i];
+            let meaning;
+            const color = colorPalette[i % colorPalette.length];
+            
+            if (letter === 'և') {
+                meaning = letterMeanings['և'];
+            }
+            else if ((letter === 'ե' || letter === 'Ե') && i + 1 < processedWord.length && (processedWord[i + 1] === 'վ' || processedWord[i + 1] === 'Վ')) {
+                letter = 'և';
+                meaning = letterMeanings['և'];
+                i++;
+            }
+            else if ((letter === 'ու' || letter === 'Ո') && i + 1 < processedWord.length && (processedWord[i + 1] === 'ւ' || processedWord[i + 1] === 'Ւ')) {
+                letter = 'ՈՒ';
+                meaning = letterMeanings['ՈՒ'];
+                i++;
+            }
+            else {
+                letter = letter.toUpperCase();
+                meaning = letterMeanings[letter];
+            }
+            
+            if (meaning) {
+                letterBreakdown += `
+                    <div class="letter-block">
+                        <div class="letter-title" style="color: ${color}">
+                            <strong>${letter}</strong> - ${meaning}
+                        </div>
+                    </div>
+                `;
+                
+                fullInterpretation += `<div class="color-coded" style="background: ${color + '30'}; color: ${color}">
+                    <strong>${letter}</strong>: ${meaning}
+                </div>`;
+            }
+        }
+    }
+    
+    const finalOutput = `
+        <div style="margin-bottom: 20px;">
+            <h3>Տառ-իմաստների վերլուծություն</h3>
+            ${letterBreakdown}
+        </div>
+        <div class="interpretation-block">
+            <h3>Ամբողջական իմաստային հոսք</h3>
+            <div style="margin-top: 15px;">
+                ${fullInterpretation}
+            </div>
+        </div>
+    `;
+    
+    resultDiv.innerHTML = finalOutput;
+}
+
+function playWord() {
+    const word = document.getElementById('wordInput').value.trim();
+    if (!word) return;
+    
+    const words = word.split(/\s+/);
+    
+    for (let i = 0; i < words.length; i++) {
+        const currentWord = words[i];
+        const result = calculateNote(currentWord);
+        playTone(result.frequency);
+    }
+    
+    let totalWeight = 0;
+    for (let i = 0; i < words.length; i++) {
+        totalWeight += calculateWordWeight(words[i]);
+    }
+    
+    const resultDiv = document.getElementById('result');
+    
+    document.getElementById('historyPanel').style.display = 'none';
+    document.getElementById('settingsPanel').style.display = 'none';
+    
+    resultDiv.innerHTML = '';
+    
+    for (let i = 0; i < words.length; i++) {
+        const currentWord = words[i];
+        const result = calculateNote(currentWord);
+        
+        resultDiv.innerHTML += `
+            <div class="calculation-display" style="margin-top: 10px;">
+                <h3>🎵 Հնչեցված նոտա - «${currentWord}»</h3>
+                <div class="calc-item">Նոտան՝ <strong>${result.noteNameHy}</strong></div>
+                <div class="calc-item">Հաճախականությունը՝ <strong>${result.frequency.toFixed(2)} Հց</strong></div>
+                <div class="calc-item">MIDI համարը՝ <strong>${result.midi}</strong></div>
+                <div class="calc-item">Ստեղնի համարը (1-88)՝ <strong>${result.isOutOfRange ? "Այս նոտան դաշնամուրի տիրույթից դուրս է" : result.keyNumber}</strong></div>
+                <div class="calc-item">Բանաձևը՝ <strong>432 × 2^((MIDI-69)/12) = 432 × 2^(${result.midi-69}/12) = ${result.frequency.toFixed(2)} Հց</strong></div>
+            </div>
+        `;
+    }
+    
+    resultDiv.innerHTML += `
+        <div class="calculation-display" style="margin-top: 15px; border-color: #c62828;">
+            <h3>📊 Ընդհանուր կշիռ (բոլոր բառերը)</h3>
+            <div class="calc-item"><strong>Ընդհանուր կշիռը՝</strong> ${totalWeight}</div>
+        </div>
+    `;
+}
+
+function showColor() {
+    const word = document.getElementById('wordInput').value.trim();
+    if (!word) return;
+    
+    const words = word.split(/\s+/);
+    
+    let totalWeight = 0;
+    for (let i = 0; i < words.length; i++) {
+        totalWeight += calculateWordWeight(words[i]);
+    }
+    
+    const calculatedCore = totalWeight + (totalWeight * faEffect / 100);
+    const color = calculateColor(calculatedCore);
+    
+    document.body.style.backgroundColor = color;
+    
+    const resultDiv = document.getElementById('result');
+    
+    document.getElementById('historyPanel').style.display = 'none';
+    document.getElementById('settingsPanel').style.display = 'none';
+    
+    resultDiv.innerHTML = '';
+    
+    resultDiv.innerHTML += `
+        <div class="calculation-display">
+            <h3>🎨 Գունային ցուցադրություն</h3>
+            <div class="calc-item">Գույնի կոդը՝ <strong>${color}</strong></div>
+            <div class="calc-item">Հաշվարկը՝ <strong>R = ((${calculatedCore.toFixed(2)} × 7) % 155) + 100, G = ((${calculatedCore.toFixed(2)} × 12) % 100) + 130, B = ((${calculatedCore.toFixed(2)} × 39) % 80) + 90</strong></div>
+            <div style="width: 50px; height: 50px; background: ${color}; border-radius: 50%; margin: 10px auto; border: 3px solid #fff;"></div>
+            <div class="calc-item">Բացատրություն՝ <strong>7, 12, 39 թվերը 60-ական համակարգի բաղադրիչներ են</strong></div>
+        </div>
+    `;
+}
+
+function calculateWord() {
+    const word = document.getElementById('wordInput').value.trim();
+    if (!word) return;
+    
+    const words = word.split(/\s+/);
+    
+    let totalWeight = 0;
+    for (let i = 0; i < words.length; i++) {
+        totalWeight += calculateWordWeight(words[i]);
+    }
+    
+    const resultDiv = document.getElementById('result');
+    
+    document.getElementById('historyPanel').style.display = 'none';
+    document.getElementById('settingsPanel').style.display = 'none';
+    
+    resultDiv.innerHTML = '';
+    
+    for (let i = 0; i < words.length; i++) {
+        const currentWord = words[i];
+        const result = calculateNote(currentWord);
+        
+        let letterWeights = "";
+        const upperWord = currentWord.toUpperCase();
+        const meanings = Object.keys(letterMeanings);
+        
+        for (let j = 0; j < upperWord.length; j++) {
+            let letter = upperWord[j];
+            let weight = 0;
+            
+            if (letter === 'Ե' && j + 1 < upperWord.length && upperWord[j + 1] === 'Վ') {
+                letter = 'և';
+                weight = 37;
+                j++;
+            } else if (letter === 'Ո' && j + 1 < upperWord.length && upperWord[j + 1] === 'Ւ') {
+                letter = 'ՈՒ';
+                weight = 34;
+                j++;
+            } else {
+                const index = meanings.indexOf(letter);
+                if (index !== -1) {
+                    weight = index + 1;
+                }
+            }
+            
+            if (weight > 0) {
+                letterWeights += `<div class="calc-item">${letter} = ${weight}</div>`;
+            }
+        }
+        
+        resultDiv.innerHTML += `
+            <div class="calculation-display" style="margin-top: 10px;">
+                <h3>🔢 Kernel60-ի Հաշվարկ - «${currentWord}»</h3>
+                <div style="margin-bottom: 10px;">
+                    <strong>Տառերի կշիռները՝</strong>
+                    ${letterWeights}
+                </div>
+                <div class="calc-item"><strong>Ընդհանուր կշիռը՝</strong> ${result.weight}</div>
+                <div class="calc-item"><strong>Ֆա-յի էֆեկտով (6.66%)՝</strong> ${result.calculatedCore.toFixed(2)}</div>
+                <div class="calc-item"><strong>Նոտան՝</strong> ${result.noteNameHy}</div>
+                <div class="calc-item"><strong>Հաճախականությունը՝</strong> ${result.frequency.toFixed(2)} Հց</div>
+                <div class="calc-item"><strong>MIDI համարը՝</strong> ${result.midi}</div>
+                <div class="calc-item"><strong>Ստեղնի համարը (1-88)՝</strong> ${result.isOutOfRange ? "Այս նոտան դաշնամուրի տիրույթից դուրս է" : result.keyNumber}</div>
+                <div class="calc-item"><strong>Գույնի կոդը՝</strong> ${result.color}</div>
+                <div class="calc-item"><strong>Բանաձևը՝</strong> 432 × 2^((MIDI-69)/12) = 432 × 2^(${result.midi-69}/12) = ${result.frequency.toFixed(2)} Հց</div>
+            </div>
+        `;
+    }
+    
+    const calculatedCore = totalWeight + (totalWeight * faEffect / 100);
+    const color = calculateColor(calculatedCore);
+    
+    resultDiv.innerHTML += `
+        <div class="calculation-display" style="margin-top: 15px; border-color: #c62828;">
+            <h3>📊 Ընդհանուր արդյունք (բոլոր բառերը)</h3>
+            <div class="calc-item"><strong>Ընդհանուր կշիռը՝</strong> ${totalWeight}</div>
+            <div class="calc-item"><strong>Ֆա-յի էֆեկտով (6.66%)՝</strong> ${calculatedCore.toFixed(2)}</div>
+            <div class="calc-item"><strong>Գույնի կոդը՝</strong> ${color}</div>
+            <div class="calc-item"><strong>Հիմնական սկզբունքը՝</strong> 39 + 12 + 7 + 1 + 1 = 60</div>
+        </div>
+    `;
+}
+
+// ==== 9. Պատմություն և կարգավորումներ ====
+let searchHistory = JSON.parse(localStorage.getItem('wordSearchHistory')) || [];
+const settings = JSON.parse(localStorage.getItem('wordSearchSettings')) || {
+    saveHistory: true,
+    showDescriptions: true
+};
+
+function saveSettings() {
+    settings.saveHistory = document.getElementById('saveHistory').checked;
+    settings.showDescriptions = document.getElementById('showDescriptions').checked;
+    localStorage.setItem('wordSearchSettings', JSON.stringify(settings));
+}
+
+function loadSettings() {
+    if (document.getElementById('saveHistory')) {
+        document.getElementById('saveHistory').checked = settings.saveHistory;
+        document.getElementById('showDescriptions').checked = settings.showDescriptions;
+    }
+}
+
+function updateHistory(word) {
+    if (!settings.saveHistory) return;
+    searchHistory = searchHistory.filter(item => item !== word);
+    searchHistory.unshift(word);
+    if (searchHistory.length > 10) {
+        searchHistory = searchHistory.slice(0, 10);
+    }
+    localStorage.setItem('wordSearchHistory', JSON.stringify(searchHistory));
+    renderHistory();
+}
+
+function renderHistory() {
+    const historyContainer = document.getElementById('historyItems');
+    if (historyContainer) {
+        historyContainer.innerHTML = '';
+        searchHistory.forEach(word => {
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            historyItem.textContent = word;
+            historyItem.onclick = () => {
+                document.getElementById('wordInput').value = word;
+                interpretWord();
+            };
+            historyContainer.appendChild(historyItem);
+        });
+    }
+}
+
+function clearHistory() {
+    searchHistory = [];
+    localStorage.removeItem('wordSearchHistory');
+    renderHistory();
+}
+
+function toggleHistory() {
+    const panel = document.getElementById('historyPanel');
+    const settingsPanel = document.getElementById('settingsPanel');
+    const resultDiv = document.getElementById('result');
+    
+    resultDiv.innerHTML = '';
+    
+    if (panel.style.display === 'none' || panel.style.display === '') {
+        panel.style.display = 'block';
+        settingsPanel.style.display = 'none';
+    } else {
+        panel.style.display = 'none';
+    }
+}
+
+function toggleSettings() {
+    const panel = document.getElementById('settingsPanel');
+    const historyPanel = document.getElementById('historyPanel');
+    const resultDiv = document.getElementById('result');
+    
+    resultDiv.innerHTML = '';
+    
+    if (panel.style.display === 'none' || panel.style.display === '') {
+        panel.style.display = 'block';
+        historyPanel.style.display = 'none';
+        loadSettings();
+    } else {
+        panel.style.display = 'none';
+    }
+}
+
+// ==== 10. Հին ֆունկցիաներ ====
+const baseFreq = 432;
+const faEffect = 6.66;
+
+function octaveName(octave) {
+    const names = {
+        0: "սուբկոնտր օկտավա",
+        1: "կոնտր օկտավա",
+        2: "մեծ օկտավա",
+        3: "փոքր օկտավա",
+        4: "1-ին օկտավա",
+        5: "2-րդ օկտավա",
+        6: "3-րդ օկտավա",
+        7: "4-րդ օկտավա"
+    };
+    return names[octave] || `${octave}-րդ օկտավա`;
+}
+
+function calculateWordWeight(word) {
+    let totalWeight = 0;
+    
+    const weights = {
+        'Ա': 1, 'Բ': 2, 'Գ': 3, 'Դ': 4, 'Ե': 5, 'Զ': 6, 'Է': 7, 'Ը': 8,
+        'Թ': 9, 'Ժ': 10, 'Ի': 11, 'Լ': 12, 'Խ': 13, 'Ծ': 14, 'Կ': 15, 'Հ': 16,
+        'Ձ': 17, 'Ղ': 18, 'Ճ': 19, 'Մ': 20, 'Յ': 21, 'Ն': 22, 'Շ': 23, 'Ո': 24,
+        'Չ': 25, 'Պ': 26, 'Ջ': 27, 'Ռ': 28, 'Ս': 29, 'Վ': 30, 'Տ': 31, 'Ր': 32,
+        'Ց': 33, 'ՈՒ': 34, 'Փ': 35, 'Ք': 36, 'և': 37, 'Օ': 38, 'Ֆ': 39
+    };
+    
+    for (let i = 0; i < word.length; i++) {
+        let letter = word[i];
+        
+        if (letter === 'և' || letter === 'ԵՎ') {
+            totalWeight += weights['և'];
+        }
+        else if (letter === 'Ո' && i + 1 < word.length && word[i + 1] === 'Ւ') {
+            totalWeight += weights['ՈՒ'];
+            i++;
+        }
+        else {
+            const upperLetter = letter.toUpperCase();
+            if (weights[upperLetter]) {
+                totalWeight += weights[upperLetter];
+            }
+        }
+    }
+    
+    return totalWeight;
+}
+
+function calculateCore(word) {
+    const weight = calculateWordWeight(word);
+    return {
+        weight: weight,
+        calculatedCore: weight + (weight * faEffect / 100)
+    };
+}
+
+const noteNamesEnglish = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+const noteNamesHy = ["Դո", "Դո դիեզ", "Ռե", "Ռե դիեզ", "Մի", "Ֆա", "Ֆա դիեզ", "Սոլ", "Սոլ դիեզ", "Լյա", "Լյա դիեզ", "Սի"];
+
+function calculateNote(word) {
+    const coreResult = calculateCore(word);
+    const weight = coreResult.weight;
+    const calculatedCore = coreResult.calculatedCore;
+    
+    let octave = Math.floor(calculatedCore / 12) % 8;
+    let noteIndex = Math.floor(calculatedCore % 12);
+    
+    const midi = 12 * (octave + 1) + noteIndex;
+    
+    const frequency = baseFreq * Math.pow(2, (midi - 69) / 12);
+    
+    const keyNumber = midi - 20;
+    
+    const color = calculateColor(calculatedCore);
+    
+    return {
+        weight: weight,
+        calculatedCore: calculatedCore,
+        octave: octave,
+        noteIndex: noteIndex,
+        noteName: noteNamesEnglish[noteIndex] + octave,
+        noteNameHy: `${noteNamesHy[noteIndex]} (${noteNamesEnglish[noteIndex]}) ${octaveName(octave)}`,
+        midi: midi,
+        frequency: frequency,
+        keyNumber: keyNumber,
+        color: color,
+        isOutOfRange: midi < 21 || midi > 108
+    };
+}
+
+function calculateColor(calculatedCore) {
+    let r = Math.floor((calculatedCore * 7) % 155) + 100;
+    let g = Math.floor((calculatedCore * 12) % 100) + 130;
+    let b = Math.floor((calculatedCore * 39) % 80) + 90;
+    
+    r = Math.min(255, Math.max(0, r));
+    g = Math.min(255, Math.max(0, g));
+    b = Math.min(255, Math.max(0, b));
+    
+    return `#${r.toString(16).padStart(2, '0').toUpperCase()}${g.toString(16).padStart(2, '0').toUpperCase()}${b.toString(16).padStart(2, '0').toUpperCase()}`;
+}
+
+let audioCtx = null;
+
+function playTone(freq, duration = 1.5) {
+    if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+    
+    let oscillator = audioCtx.createOscillator();
+    let gainNode = audioCtx.createGain();
+    
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    
+    gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + duration);
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    
+    oscillator.start();
+    oscillator.stop(audioCtx.currentTime + duration);
+}
+
+// ==== 11. Կենդանակերպ ====
+function showZodiac() {
+    const word = document.getElementById('wordInput').value.trim();
+    if (!word) return;
+    
+    const resultDiv = document.getElementById('result');
+    
+    document.getElementById('historyPanel').style.display = 'none';
+    document.getElementById('settingsPanel').style.display = 'none';
+    
+    resultDiv.innerHTML = '';
+    
+    const wordVector = getMeaningVector(word);
+    const wordMeaning = getWordMeaning(word);
+    
+    const matches = constellations.map(c => {
+        const constellationProfile = getConstellationProfile(c);
+        const similarity = cosineSimilarity(wordVector, constellationProfile);
+        const matchPercent = Math.max(0, Math.min(100, similarity * 100));
+        return { ...c, matchPercent: matchPercent };
+    });
+    
+    matches.sort((a, b) => b.matchPercent - a.matchPercent);
+    
+    const bestMatch = matches[0];
+    
+    let tableHTML = `
+        <h3>🌌 ԿԵՆԴԱՆԱԿԵՐՊ՝ «${word}»</h3>
+        <p><strong>Բառի իմաստային հոսքը՝</strong> ${wordMeaning}</p>
+        <table class="zodiac-table">
+            <thead>
+                <tr>
+                    <th>Համաստեղություն</th>
+                    <th>Շումերական/Աքքադական անուն</th>
+                    <th>Հայերեն տառադարձություն</th>
+                    <th>Իմաստային որակ (ըստ վերծանման)</th>
+                    <th>Համընկնում</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+    
+    matches.forEach((c, index) => {
+        const isBest = index === 0;
+        const highlightClass = isBest ? 'class="highlight"' : '';
+        
+        tableHTML += `
+            <tr ${highlightClass}>
+                <td><strong>${c.name}</strong></td>
+                <td>${c.sumerian}</td>
+                <td>${c.hyTranscription}</td>
+                <td>${c.meaning}</td>
+                <td>${c.matchPercent.toFixed(1)}%</td>
+            </tr>
+        `;
+    });
+    
+    tableHTML += `
+            </tbody>
+        </table>
+    `;
+    
+    resultDiv.innerHTML = tableHTML;
+}
+
+function getWordMeaning(word) {
+    let meaningParts = [];
+    const processedWord = word.toUpperCase();
+    
+    for (let i = 0; i < processedWord.length; i++) {
+        let letter = processedWord[i];
+        let meaning;
+        
+        if (letter === 'և') {
+            meaning = letterMeanings['և'];
+        }
+        else if (letter === 'Ե' && i + 1 < processedWord.length && processedWord[i + 1] === 'Վ') {
+            meaning = letterMeanings['և'];
+            i++;
+        }
+        else if (letter === 'Ո' && i + 1 < processedWord.length && processedWord[i + 1] === 'Ւ') {
+            meaning = letterMeanings['ՈՒ'];
+            i++;
+        }
+        else {
+            meaning = letterMeanings[letter];
+        }
+        
+        if (meaning) {
+            meaningParts.push(meaning);
+        }
+    }
+    
+    return meaningParts.length > 0 ? meaningParts.join(" → ") : "Իմաստը հասանելի չէ";
+}
+
+function getMeaningVector(word) {
+    const vector = {};
+    const processedWord = word.toUpperCase();
+    
+    for (let i = 0; i < processedWord.length; i++) {
+        let letter = processedWord[i];
+        
+        if (letter === 'Ե' && i + 1 < processedWord.length && processedWord[i + 1] === 'Վ') {
+            letter = 'և';
+            i++;
+        }
+        else if (letter === 'Ո' && i + 1 < processedWord.length && processedWord[i + 1] === 'Ւ') {
+            letter = 'ՈՒ';
+            i++;
+        }
+        
+        for (const category in meaningCategories) {
+            if (meaningCategories[category].includes(letter)) {
+                vector[category] = (vector[category] || 0) + 1;
+            }
+        }
+    }
+    
+    return vector;
+}
+
+function getConstellationProfile(constellation) {
+    const profile = {};
+    const letters = constellation.hyTranscription.toUpperCase();
+    
+    for (let i = 0; i < letters.length; i++) {
+        let letter = letters[i];
+        
+        if (letter === 'Ե' && i + 1 < letters.length && letters[i + 1] === 'Վ') {
+            letter = 'և';
+            i++;
+        }
+        else if (letter === 'Ո' && i + 1 < letters.length && letters[i + 1] === 'Ւ') {
+            letter = 'ՈՒ';
+            i++;
+        }
+        
+        for (const category in meaningCategories) {
+            if (meaningCategories[category].includes(letter)) {
+                profile[category] = (profile[category] || 0) + 1;
+            }
+        }
+    }
+    
+    return profile;
+}
+
+function cosineSimilarity(vec1, vec2) {
+    let dotProduct = 0;
+    let magnitude1 = 0;
+    let magnitude2 = 0;
+    
+    const allKeys = new Set([...Object.keys(vec1), ...Object.keys(vec2)]);
+    
+    for (const key of allKeys) {
+        const val1 = vec1[key] || 0;
+        const val2 = vec2[key] || 0;
+        
+        dotProduct += val1 * val2;
+        magnitude1 += val1 * val1;
+        magnitude2 += val2 * val2;
+    }
+    
+    if (magnitude1 === 0 || magnitude2 === 0) return 0;
+    
+    return dotProduct / (Math.sqrt(magnitude1) * Math.sqrt(magnitude2));
+}
+
+// ==== 12. MUL.APIN-ի 18 համաստեղություններ ====
+const constellations = [
+    { name: "Խոյ", hyName: "ԽՈՅ", hyTranscription: "ՄՈՒԼ ՈՒԴՈՒ ՆԻՏԱ", sumerian: "MUL.UDU.NITA", meaning: "Վարձու մշակ – աշխատանքի, ծառայության, երկրային կապի հոսք", weight: 137 },
+    { name: "Պլեադեսներ", hyName: "ՊԼԵԱԴԵՍՆԵՐ", hyTranscription: "ՄՈՒԼ ՄՈՒԼ", sumerian: "MUL.MUL", meaning: "Աստղերի փունջ – բազմության, հավաքականության, կապի հոսք", weight: 66 },
+    { name: "Երկվորյակներ", hyName: "ԵՐԿՎՈՐՅԱԿՆԵՐ", hyTranscription: "ՄՈՒԼ ՄԱՇ ՏԱԲ ԲԱ ԳԱԼ ԳԱԼ", sumerian: "MUL.MAŠ.TAB.BA.GAL.GAL", meaning: "Մեծ երկվորյակներ – երկու ուժի փոխազդեցության, հավասարակշռության հոսք", weight: 113 },
+    { name: "Խեցգետին", hyName: "ԽԵՑԳԵՏԻՆ", hyTranscription: "ՄՈՒԼ ԱԼԼԱ", sumerian: "MUL.ALLA", meaning: "Խեցգետին – պաշտպանության, արմատների, զգայունության հոսք", weight: 26 },
+    { name: "Առյուծ", hyName: "ԱՌՅՈՒԾ", hyTranscription: "ՄՈՒԼ ՈՒՐ ԳՈՒ ԼԱ", sumerian: "MUL.UR.GU.LA", meaning: "Առյուծ – ուժի, իշխանության, արարման հոսք", weight: 116 },
+    { name: "Կույս", hyName: "ԿՈՒՅՍ", hyTranscription: "ՄՈՒԼ ԱԲ ՍԻՆ", sumerian: "MUL.AB.SIN", meaning: "Գարու ցողուն – ճշգրտության, վերլուծության, աշխատանքի հոսք", weight: 65 },
+    { name: "Կշեռք", hyName: "ԿՇԵՌՔ", hyTranscription: "ՄՈՒԼ ԶԻԲԱՆԻՏՈՒ", sumerian: "MUL.ZIBANITU", meaning: "Կշեռք – հավասարակշռության, արդարության, հարաբերության հոսք", weight: 118 },
+    { name: "Կարիճ", hyName: "ԿԱՐԻՃ", hyTranscription: "ՄՈՒԼ ԳԻՐ ՏԱԲ", sumerian: "MUL.GIR.TAB", meaning: "Կարիճ – խորության, ինտենսիվության, վերափոխման հոսք", weight: 99 },
+    { name: "Աղեղնավոր", hyName: "ԱՂԵՂՆԱՎՈՐ", hyTranscription: "ՄՈՒԼ ՊԱ ԲԻԼ ՍԱԳ", sumerian: "MUL.PA.BIL.SAG", meaning: "Պաբիլսագ – նպատակի, ուղղորդման, ճանապարհի հոսք", weight: 105 },
+    { name: "Այծեղջյուր", hyName: "ԱՅԾԵՂՋՅՈՒՐ", hyTranscription: "ՄՈՒԼ ՍՈՒՀՈՒՐ ՄԱՇ", sumerian: "MUL.SUHUR.MAŠ", meaning: "Այծ-ձուկ – հաստատակամության, կարգի, նվաճման հոսք", weight: 108 },
+    { name: "Ջրհոս", hyName: "ՋՐՀՈՍ", hyTranscription: "ՄՈՒԼ ԳՈՒ ԼԱ", sumerian: "MUL.GU.LA", meaning: "Հսկա – մարմնավորման, մեծության, ստեղծարարության հոսք", weight: 76 },
+    { name: "Ձկներ", hyName: "ՁԿՆԵՐ", hyTranscription: "ՄՈՒԼ ԿՈՒՆ ՄԵՇ", sumerian: "MUL.KUN.MEŠ", meaning: "Պոչեր – հոսքի, զգայունության, երևակայության հոսք", weight: 72 },
+    { name: "Կապելլա", hyName: "ԿԱՊԵԼԼԱ", hyTranscription: "ՄՈՒԼ ԳԱՄ", sumerian: "MUL.GAM", meaning: "Կեռա – հավասարակշռության, գեղեցկության, ներդաշնակության հոսք", weight: 46 },
+    { name: "Օրիոն", hyName: "ՕՐԻՈՆ", hyTranscription: "ՄՈՒԼ ՍԻՊԱ ԶԻ ԱՆ ՆԱ", sumerian: "MUL.SIPA.ZI.AN.NA", meaning: "Երկնքի հավատարիմ հովիվ – պաշտպանության, ուղղորդման, հավատարմության հոսք", weight: 121 },
+    { name: "Ալդեբարան", hyName: "ԱԼԴԵԲԱՐԱՆ", hyTranscription: "ՄՈՒԼ ԴԻԼԻ", sumerian: "MUL.DILI", meaning: "Մենակյաց – անկախության, ամբողջականության, ներքին ուժի հոսք", weight: 54 },
+    { name: "Սիրիուս", hyName: "ՍԻՐԻՈՒՍ", hyTranscription: "ՄՈՒԼ ԿԱԿ ՍԻ ՍԱ", sumerian: "MUL.KAK.SI.SA", meaning: "Նետ – լույսի, պայծառության, հստակության հոսք", weight: 87 },
+    { name: "Ռեգուլուս", hyName: "ՌԵԳՈՒԼՈՒՍ", hyTranscription: "ՄՈՒԼ ԼՈՒԳԱԼ", sumerian: "MUL.LUGAL", meaning: "Թագավոր – իշխանության, կենտրոնացման, առաջնորդության հոսք", weight: 96 },
+    { name: "Արոր", hyName: "ԱՐՈՐ", hyTranscription: "ՄՈՒԼ ԱՊԻՆ", sumerian: "MUL.APIN", meaning: "Արոր – արարման, կարգի, շարժման հոսք", weight: 72 }
+];
+
+// ==== 13. Սկզբնականացում ====
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('historyPanel').style.display = 'none';
+    document.getElementById('settingsPanel').style.display = 'none';
+    renderHistory();
+    loadSettings();
+});
+
+function shareFacebook() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareTwitter() {
+    window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareWhatsApp() {
+    window.open('https://wa.me/?text=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareTelegram() {
+    window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href), '_blank');
+}
+function copyLink() {
+    const el = document.createElement('textarea');
+    el.value = window.location.href;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('Հղումը պատճենված է');
+}
+</script>
+
+</body>
+</html>
