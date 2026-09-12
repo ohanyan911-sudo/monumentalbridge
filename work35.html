@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Կենսաբանության Լեզվամտածող Կամուրջը</title>
+	<meta name="description" content="Մոնումենտալ Կամուրջ. 60-ական համակարգ, Լեզվզմտածող աշխարհ, Փիլիսոփայական մոդել:">
+	<meta name="author" content="Մի Մարդ, Ով Չգիտեր Ուր է Գնում">
+	<meta name="keywords" content="60-ական համակարգ, Լեզվամտածող աշխարհ, Մոնումենտալ Կամուրջ, Ֆա-յի էֆեկտ, Արատտա, Տրոյա, փիլիսոփայություն">
+	<meta name="robots" content="index, follow">
+
+	<meta property="og:title" content="Մոնումենտալ Կամուրջ / Monumental Bridge / Կենսաբանության Լեզվամտածող Կամուրջը">
+	<meta property="og:description" content="Լեզվամտածող տիեզերք, 60-ական պարադիգմ և անվերջ որոնում:">
+	<meta property="og:type" content="website">
+
+    <style type="text/css">
+	img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+	
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #ECF4FD;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Վերևի դեկորատիվ գոտին */
+        header { width: 100%; }
+        .line-grey   { height: 10px; background-color: #F2F2F2; }
+        .line-dark   { height: 7px;  background-color: #333333; }
+        .line-yellow { height: 7px;  background-color: #F4E6B9; }
+        .line-image  { 
+            height: 40px; 
+            background-image: url('images/01.jpg'); 
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: auto 100%;
+        }
+
+        /* Նավիգացիոն մենյու */
+        nav {
+            background-color: #FEF3FE;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #E1F0FD;
+        }
+        nav a {
+            color: #652286;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+        nav a:hover { color: #FD7E00; }
+
+        /* Գլխավոր երկսյունակ կոնտեյներ */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        /* ՁԱԽ ՍՅՈՒՆԱԿ — Բուն աշխատության տեքստը */
+        .content-area {
+            flex: 7;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        .content-area h1 {
+            color: #652286;
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #F4E6B9;
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        .work-text p {
+            text-align: justify;
+            text-indent: 30px;
+            font-size: 17px;
+            color: #333333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Անցումների կոճակները */
+        .work-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            border-top: 1px solid #E1F0FD;
+            padding-top: 20px;
+        }
+        .nav-btn {
+            color: #652286;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .nav-btn:hover { color: #FD7E00; }
+
+        /* ԱՋ ՍՅՈՒՆԱԿ — Գործերի կողային մենյու */
+        .sidebar {
+            flex: 3;
+            background-color: #ffffff;
+            padding: 30px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            color: #652286;
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #F4E6B9;
+            padding-bottom: 8px;
+        }
+
+        .sidebar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 8px 6px;
+            border-bottom: 1px solid #FEF3FE;
+            text-decoration: none;
+            color: #333333;
+            font-size: 14px;
+            line-height: 1.4;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .sidebar-item:hover {
+            color: #FD7E00;
+            background-color: #FEF3FE;
+            border-radius: 4px;
+        }
+        .sidebar-item.active {
+            color: #FD7E00;
+            background-color: #FEF3FE;
+            border-left: 3px solid #652286;
+            padding-left: 5px;
+        }
+
+        .sidebar-num {
+            color: #FD7E00;
+            min-width: 25px;
+        }
+        
+        .style2 {
+            color: #777777;
+            font-size: 14px;
+            border-top: 1px solid #F4E6B9;
+            padding-top: 15px;
+            margin-top: 40px;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper { flex-direction: column; }
+            .sidebar { max-height: none; }
+        }
+		/* Կիսվելու կոճակների ոճերը */
+.share-section {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #F4E6B9;
+    text-align: center;
+}
+.share-title {
+    color: #652286;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.share-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.share-fb { background-color: #3b5998; }
+.share-tw { background-color: #000000; }
+.share-wa { background-color: #25D366; }
+.share-tg { background-color: #0088cc; }
+.share-copy { background-color: #652286; }
+
+.sidebar-section-title {
+    display: block;
+    color: #FD7E00;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed #F4E6B9;
+    text-transform: uppercase;
+}
+.sidebar-section-title:first-child {
+    margin-top: 5px;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="line-grey"></div>
+        <div class="line-dark"></div>
+        <div class="line-yellow"></div>
+        <div class="line-dark"></div>
+        <div class="line-image"></div>
+        <div class="line-yellow"></div>
+        <div class="line-dark"></div>
+    </header>
+
+<div style="position: fixed; top: 95px; left: 15px; z-index: 100;">
+    <iframe src="logo60.html" style="width: 250px; height: 250px; border: none;" scrolling="no"></iframe>
+</div>
+
+    <nav>
+        <a href="index.html">ԳԼԽԱՎՈՐ</a>
+        <a href="aboutme.html">ԻՄ ՄԱՍԻՆ</a>
+        <a href="works.html" style="color: #FD7E00;">ԳՈՐԾԵՐ</a>
+        <a href="tools.html">ԳՈՐԾԻՔՆԵՐ</a>
+        <a href="contact.html">ԿԱՊ</a>
+    </nav>
+
+    <div class="main-wrapper">
+
+        <!-- ՁԱԽ ՄԱՍ. ԱՇԽԱՏՈՒԹՅԱՆ ԲՈՎԱՆԴԱԿՈՒԹՅՈՒՆԸ -->
+        <main class="content-area">
+            <h1>35. Կենսաբանության Լեզվամտածող Կամուրջը </h1>
+            
+            <div class="work-text">
+              <div align="justify">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td><div align="center"><img src="images/36.jpg" alt="60 - ական Գենոմ"></div></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<strong>Նախաբան</strong><br>
+    &emsp;Գերմանացի մաթեմատիկոս Էմմի Նյոթերը 1918 թվականին ապացուցեց մի թեորեմ, որը դարձավ ժամանակակից ֆիզիկայի հիմնասյուներից մեկը։<br>
+    &emsp;Նյոթերի թեորեմը պնդում է, որ համակարգի յուրաքանչյուր շարունակական համաչափությանը համապատասխանում է պահպանման մի օրենք։<br>
+    &emsp;Այսինքն՝ եթե համակարգի վարքը չի փոխվում ժամանակի ընթացքում, ապա պահպանվում է էներգիան, եթե համակարգի վարքը չի փոխվում տարածության մեջ տեղափոխվելիս, ապա պահպանվում է իմպուլսը, եթե համակարգը համաչափ է պտույտների նկատմամբ, ապա պահպանվում է անկյունային մոմենտը, եթե պահպանվում է համակարգի տրամաչափային սիմետրիան, ապա խոսք է գնում լիցքի պահպանման օրենքի մասին և այլն:<br>
+    &emsp;Սա նշանակում է, որ պահպանման օրենքները պատահական չեն, այլ բխում են բնության խորքային համաչափություններից։ Եվ այստեղ է, որ բացվում է կամուրջը դեպի լեզուն: Եթե 60 – ական համակարգի բաղադրիչ հանդիսացող որևէ էլեմենտ, այդ թվում և լեզուն՝ որպես հնչյուբանական գործիք, ունի իր ներքին համաչափությունները, ապա պիտի ունենա նաև իր պահպանման օրենքները։<br>
+    &emsp;Այն, ինչ ձևավորվել է որպես իմաստ, չի կարող անհետանալ առանց հետքի, այլ պիտի փոխակերպվի և պահպանվի այլ համակարգերում՝ ներառյալ կենսաբանական կոդերում։<br>
+    &emsp;Սա այն գիտական հիմքն է, որի վրա կարող է կանգնել «Գ Դ Ե Ա Խ Զ Վ Ն»-ի ողջ տրամաբանությունը:<br>
+    &emsp;Գենետիկական կոդը կարդացվում է չորս տառերով՝ A, T, G, C։ Այս չորս տառերից կազմված 61 ակտիվ կոդոնները կոդավորում և սինթեզում են 20 ամինաթթուներ, որոնցից կառուցվում է կյանքի ողջ սպիտակուցային ճարտարապետությունը։ Սա հաստատված գիտական փաստ է։<br>
+    &emsp;Հայերենի այբուբենի 39 տառերի տառիմաստները, որոնցից յուրաքանչյուրը կրում է իր իմաստային կշիռը և վերծանված է Լեզվամտածող Աշխարհը տեսլականում, բաղադրվեում են 60-ական համակարգի 39 + 12 + 7 + 1 + 1 = 60 բանաձևում։<br>
+    &emsp;Մինչ այժմ այս երկու համակարգերը քննվել են առանձին։ Սույն աշխատությունը առաջին անգամ դրանք դնում է մեկ ընդհանուր հարթության վրա՝ ցույց տալով, որ լեզվական հնչյունաշղթան կարող է փոխակերպվել գենետիկական ստորագրության՝ պահպանելով իմաստային խտությունը։<br>
+    &emsp;Նույնիսկ կամայական հնչյուններից կազմված հաջորդականությունները, անցնելով ԴՆԹ անալիզի միջով, տալիս են իրենց գենետիկ ստորագրությունը, տրոհվելով կոդոնների և ազատ նուկլեոտիդների։ Այդ կոդոնները կոդավորում են ամինաթթուները, որոնց կենսաբանական դերերը կառուցվածքային կամուրջների ստեղծումն ու կառուցվածքային ճկունության ապահովումն է։<br>
+    &emsp;Աշխատությունը քննում է, թե արդյոք այս փոխակերպումը զուտ ձևական է, թե այն կրում է կենսաբանական նշանակություն։ Դրա համար կվերլուծեմ կոդոնային քարտեզը, ամինաթթուների բաշխումը, TRDD1 գենի պաշտպանողական դերը և էպիգենետիկ ազդակի հնարավոր ուղիները։<br>
+    &emsp;Սա գիտափիլիսոփայական հետազոտություն է, որը չի բավարարվում ենթադրությամբ, այլ փորձում է կառուցել ապացուցողական շղթա՝ հնչյունից դեպի տառիմաստ, տառիմաստից դեպի գենետիկական կոդ, և գենետիկական կոդից դեպի կենդանի համակարգի պաշտպանական առանցքը։<br>
+    &emsp;Իսկ եթե այս շղթան կանգուն է, ապա մենք կանգնած ենք մի նոր հարցի առաջ, որի պատասխանը կարող է փոխել այն, թե ինչպես ենք հասկանում լեզվի և կյանքի հարաբերությունը։<br>
+
+    &emsp;<strong>Լեզուն դադարելով լինել միայն մարդկային երևույթ կամ հաղորդակցության միջոց՝ դառնում է կենսաբանական փաստարկից բխող կյանքի ինքնակարգավորման գործիք:</strong><br>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<strong>Հնչյունաբանական վերլուծական մեթոդի հակառակ երեսը</strong><br>
+    &emsp;Լեզվամտածող Աշխարհը տեսլականը մեր համար դարձավ մի գործիք, որի միջոցով ամեն մի տառ և ամեն մի հնչյուն ստացավ իր իմաստային կշիռը։ Այդ գործիքը մենք կիրառել ենք բազմիցս՝ վերլուծելով բառեր, անուններ, հնչյունաշղթաներ, և ստացել ենք ապացուցողական արդյունքներ։ Ճանապարհը միշտ եղել է նույնը՝ վերցնում էինք հնչյունը կամ տառը, բացում էինք նրա իմաստը, և այդ իմաստից շարժվում էինք դեպի ձայն, գույն, թիվ, իմաստ կամ գենետիկական ստորագրություն։<br>
+    &emsp;Սա ուղիղ ընթացք է՝ հնչյունից դեպի իմաստ, իմաստից դեպի համակարգ։ Բայց այս աշխատությունը ծնվել է մի հարցից, որը շուռ է տալիս այդ ընթացքը։<br>
+    &emsp;Իսկ ի՞նչ կլինի, եթե մենք սկսենք ոչ թե հնչյունից, այլ նպատակից։ Եթե վերցնենք մի կոնկրետ կենսաբանական համակարգ, օրինակ՝ գենը, հասկանանք նրա դերը, ապա հետհաշվարկով գտնենք այն հնչյունաբանական հաջորդականությունը, որը համապատասխանում է այդ դերին։<br>
+    &emsp;Սա հնչյունաբանական վերլուծական մեթոդի հակառակ երեսն է։ Այստեղ մենք այլևս չենք հարցնում՝ «ի՞նչ է նշանակում այս հնչյունը», այլ հարցնում ենք՝ «ո՞ր հնչյունը կամ հնչյունաշղթան է կրում այն իմաստը, որը համապատասխանում է այս կենսաբանական նպատակին»։<br>
+    &emsp;Այս մոտեցումը մեթոդը դարձնում է ոչ միայն վերլուծական, այլև կառուցողական։ Այն թույլ է տալիս լեզվից անցնել նպատակային ազդակին, իսկ ազդակից՝ դեպի կենսաբանական համակարգի հետ հնարավոր փոխազդեցությանը։<br>
+    &emsp;Այս գործում այդ հակառակ երեսը կիրառվելու է մեկ կոնկրետ օրինակի վրա՝ TRDD1 գենի, որը հայտնի է որպես գենոմի պահապան էլեմենտ։ Մենք վերցնելու ենք այդ գենի պաշտպանողական դերը, վերլուծելու ենք այն իմաստային որակները, որոնք համապատասխանում են պաշտպանությանը, կարգին, վերականգնմանը, ապա հետհաշվարկով գտնելու ենք այն հնչյունաշղթան, որը կրում է այդ որակները և որը մատնեմատիկորեն կամ էպիգենետիկ ճանապարհով որպես ազդակ կակտիվացնի այդ գենը, առանց խմբագրման։<br>
+    &emsp;Սակայն սա միայն TRDD1-ի մասին չէ։ Սա մեթոդ է, որը կարող է կիրառվել ցանկացած գենի համար։ Եվ եթե այս աշխատության ավարտին մեթոդը կանգուն մնա, ապա մենք կունենանք մի գործիք, որը կարող է հաշվարկել հնչյունաբանական էպիգենետիկ ազդակ յուրաքանչյուր կենսաբանական նպատակի համար։<br>
+    &emsp;Ահա թե ինչու է այս գլուխը կոչվում «հակառակ երես»։ Որովհետև այստեղ լեզուն դադարում է լինել միայն վերլուծության առարկա և դառնում է կառուցման գործիք։ Այստեղ մենք սկսում ենք գրել կենսաբանական նպատակներով՝ օգտագործելով այն նույն այբուբենը, որով մինչ այժմ միայն կարդում էինք։<br>
+    &emsp;Եվ հենց այստեղից է սկսվում այն ճանապարհը, որի միջոցով մենք առաջին անգամ կկարողանանք խոսել գեների հետ՝ նրանց համար հաշվարկված հնչյուններով։<br>
+
+    &emsp;<strong>Լեզվամտածողությունը երկկողմ կամուրջ է լեզվի և գենի միջև:</strong><br>
+    <br>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<strong>Իմաստը որպես հնչյունի աղբյուր լեզվի ձևավորման պրոցեսում</strong><br>
+    &emsp;Լեզուն չի ծնվել որպես պատահական հնչյունների հավաքածու։ Լեզուն ծնվել է այն ժամանակ, երբ մարդու ներսում ձևավորված իմաստը կարիք ունեցավ մարմին ստանալու, դուրս գալու լռությունից և դառնալու հաղորդակցվող իրականություն։<br>
+    &emsp;Այսինքն՝ առաջինը եղել է իմաստը, բանը, իսկ հնչյունը՝ նրա առաջին շունչը։ Լեզվամտածող Աշխարհը տեսլականը հենց այս տրամաբանության վրա է կառուցված։ Այն ցույց է տալիս, որ յուրաքանչյուր տառիմաստ ի սկզբանե կրել է որոշակի իմաստային լիցք, և այդ լիցքն է ձևավորել հնչյունը, այլ ոչ թե հակառակը։<br>
+    &emsp;Երբ մենք առաջին գլխում խոսեցինք հնչյունաբանական վերլուծական մեթոդի հակառակ երեսի մասին, մենք փաստացի վերադարձանք այս սկզբնական վիճակին՝ այնտեղ, ուր իմաստը նախորդում է հնչյունին, իսկ հնչյունը դառնում է իմաստի վերարտադրման գործիք։<br>
+    &emsp;Սա նշանակում է, որ հետհաշվարկը, որը կկատարենք որևէ կենսաբանական նպատակի հնչյունային ազդակ ստանալու համար, պատահական մանիպուլյացիա չէ, այլ վերադարձ դեպի լեզվի ծննդյան պահը, երբ իմաստը դեռ նոր էր փնտրում իր հնչյունային մարմինը։<br>
+    &emsp;Մենք այստեղ կրկնելու ենք այդ նույն պրոցեսը, բայց արդեն գիտակցված մակարդակով։ Եթե ժամանակին իմաստն ինքնաբերաբար գտել է իր հնչյունը, ապա հիմա մենք կարող ենք իմաստից ելնելով կանխամտածված կերպով կառուցել հնչյունաշղթա, որը կկրի այդ իմաստը և կդառնա ազդակ։<br>
+    &emsp;Եվ հենց այստեղ է թաքնված ամբողջ առանցքը՝ այն, որ լեզուն միայն հաղորդակցության գործիք չէ, այլ իմաստի կենդանի մարմին, որը կարող է վերածվել կենսաբանական ազդակի՝ առանց կորցնելու իր իմաստային խտությունը։<br>
+    &emsp;Այս աշխատությունում մենք կցուցադրենք այդ սկզբունքը՝ իմաստից դեպի հնչյուն, և հնչյունից դեպի գենետիկական ստորագրություն՝ որպես մի շարունակական, ապացուցողական ճանապարհ։<br>
+
+    &emsp;<strong>Իմաստը հնչյունից առաջ է եղել, և այս ամենը պարզապես վերադարձ է դեպի այն պահը, երբ լեզուն կենսաբանական հետհաշվարկով առաջին անգամ շունչ առավ։</strong><br>
+    <br>
+
+
+
+
+
+
+
+
+
+
+<strong>Գենետիկական ստորագրության անատոմիան</strong><br>
+    &emsp;Կյանքի այբուբենը գրված է չորս նշանով՝ A, T, G, C։ Այս չորսը քիմիական տարրերը նուկլեոտիդներն են, որոնց հաջորդականությամբ բնությունը արարել է իր ամենաբարդ և խորքային տեքստերից մեկը՝ գենետիկական կոդը։ Բայց այս չորս տարրերը միայն նյութ չեն։ Դրանցից յուրաքանչյուրն իր մեջ կրում է մի իմաստային լիցք, որը կարելի է բացել և մենք բացել էինք նախորդ գործում՝ Լեզվամտածող Աշխարհը տեսլականի սահմանած տառիմաստների միջոցով։<br>
+    &emsp;Եթե մենք վերցնենք հայերենի 39 տառիմաստները և փորձենք դրանք դասավորել ըստ այն բանի, թե որ նուկլեոտիդի իմաստային դաշտին են դրանք համապատասխանում կամ հարում, ապա կստանանք չորս մեծ խմբեր, որոնցից յուրաքանչյուրը կրում է իր առանձնահատուկ որակը։<br>
+    &emsp;Այս խմբավորումը պատահական չէ։ Այն բխում է սկզբունքից, որ լեզվի իմաստային որակները և կյանքի կոդի տարրերը նույն կարգի դրսևորումներ են՝ տարբեր մարմիններով։<br><br>
+
+<strong>Ադենինի խումբ (A)</strong><br>
+Իմաստային հոսքը՝ Արարման հոսք, սկիզբ, աստ → Դարպաս գոյության → Սահուն հոսք → Ներքին էություն → Իմաստ → Ներքին էություն<br>
+Տառ	Նուկլեոտիդի իմաստային հոսքին համապատասխանող տառիմաստներ<br>
+Ա	&emsp;Արարման հոսք, սկիզբ, աստ<br>
+Բ	&emsp;Բան<br>
+Դ	&emsp;Դարպաս գոյության<br>
+Ե	&emsp;Սահուն հոսք<br>
+Զ	&emsp;Զորություն, պոտենցիալվ
+Ծ	&emsp;Ծնհուշ ծնեբեկման<br>
+Հ	&emsp;Հսկում արարման<br>
+Ձ	&emsp;Ձևի կաղապար<br>
+Ղ	&emsp;Խտացում<br>
+Չ	&emsp;Հաստատման կամ հերքման շեմ<br><br>
+
+<strong>Թիմինի խումբ (T</strong>)<br>
+Իմաստային հոսքը՝ Հոսքի թրթիռ → Իմաստ → Նյութի մարմնավորում → Իմաստ → Ներքին էություն<br>
+Տառ	Նուկլեոտիդի իմաստային հոսքին համապատասխանող տառիմաստներ<br>
+Թ	&emsp;Հոսքի թրթիռ<br>
+Ի	&emsp;Իմաստ<br>
+Լ	&emsp;Լույս տեսանելի<br>
+Խ	&emsp;Խտացման զպրտիչ<br>
+Կ	&emsp;Կրկնություն ստեղծական<br>
+Մ	&emsp;Նյութի մարմնավորում<br>
+Յ	&emsp;Հոսքի հաղորդակ<br>
+Ն	&emsp;Ներքին էություն<br>
+Շ	&emsp;Շարժում զգուշավոր<br>
+Ո	&emsp;Զպրտիչ հավաքող<br><br>
+
+<strong>Գուանինի խումբ (G)</strong><br>
+Իմաստային հոսքը՝ Գոյություն → Ուռկան զորության → Արարման հոսք, սկիզբ, աստ → Ներքին էություն → Իմաստ → Ներքին էություն
+Տառ	Նուկլեոտիդի իմաստային հոսքին համապատասխանող տառիմաստներ<br>
+Գ	&emsp;Գոյություն<br>
+Է	&emsp;Էություն<br>
+Ը	&emsp;Ընթացք անվերջանալի<br>
+Ժ	&emsp;Ժամանակ<br>
+Պ	&emsp;Զորության պահոց<br>
+Ջ	&emsp;Կոհերենտ ալիք<br>
+Ռ	&emsp;Ռեզոնանսի ռիթմ<br>
+Ս	&emsp;Ցրող զպրտիչ<br>
+Վ	&emsp;Կլանող պահոց<br>
+Տ	&emsp;Զորության հարված<br><br>
+
+<strong>Ցիտոզինի խումբ (C)</strong><br>
+Իմաստային հոսքը՝ Ցռել, սփռել → Իմաստ → Զորության հարված → Զպրտիչ հավաքող → Զորություն, պոտենցիալ → Իմաստ → Ներքին էություն<br>
+Տառ	Նուկլեոտիդի իմաստային հոսքին համապատասխանող տառիմաստներ<br>
+Ճ	&emsp;Ճիչ ծնեբեկման<br>
+Ց	&emsp;Ցռել, սփռել<br>
+ՈՒ	&emsp;Ուռկան զորության<br>
+Փ	&emsp;Զորության պոռթկում<br>
+Ք	&emsp;Քանքար<br>
+և	&emsp;Կամրջում, կապ, անցում<br>
+Օ	&emsp;Օծություն<br>
+Ֆ	&emsp;Արգասիք ճոխության<br>
+Ր	&emsp;Եզր ամբողջացնող<br><br>
+
+    &emsp;Այս չորս խմբերը կազմում են այն ամբողջական համակարգը, որի միջոցով հայերենի ցանկացած տառ ստանում է իր նուկլեոտիդային համապատասխանությունը։<br>
+    &emsp;Եթե մենք վերցնենք որևէ հնչյունաշղթա և այն տառ առ տառ անցկացնենք այս համապատասխանության միջով կստանանք այդ հնչյունաշղթային համապատասխանող նուլեոտիդային կոդը, որին անվանելու ենք հնյունաշղթայի գենետիկական ստորագրություն։ Այդ ստորագրությունը պատահական տառերի շարք չէ, այլ իմաստային դաշտերի վերադասավորում՝ արդեն ԴՆԹ-ի լեզվով։<br>
+    &emsp;Ստացված ստորագրությունը տրոհվում է կոդոնների, կոդոնները՝ ամինաթթուների, իսկ ամինաթթուները կրում են կենսաբանական դերեր, որոնք կարող են դառնալ կենդանի համակարգի ազդակներ։
+    &emsp;Այս ամբողջ տրամաբանությունը, որ այստեղ շարադրեցի որպես տեսություն, արդեն իսկ նյութականացված է https://ohanyan911-sudo.github.io/monumentalbridge/tools.html կայքէջում զետեղված գործիքի «ԴՆԹ անալիզ» կոճակի ֆունկցիոնալությամբ, որը կատարում է այս փոխակերպումը ռեալ հաշվարկով, առանց իմիտացիայի:<br>
+    &emsp;Բայց գենետիկական ստորագրությունը միայն սկիզբն է, որը բաղկացած է կոդոններից և ազատ նուկլեոտիդներից, որոնք պիտի բացահայտեն իրենց ամբողջական քարտեզը որում կերևա որ 61 ակտիվ եռյակներից կազմված կոդոնները գծագրում են կյանքի կոդի իրական լանդշաֆտը:<br>
+
+    &emsp;Լեզվով վերծանված կենսաբանական իրականությունն այլևս մատնեմատիկորեն իրական է:<br><br>
+
+
+
+
+
+
+
+
+
+
+
+<strong>Կոդոնային քարտեզի ամբողջական համակարգը</strong><br>
+    &emsp;Ժամանակակից կենսաբանությունը գենետիկական քարտեզը դիտարկում է որպես քիմիական զուգադիպությունների աղյուսակ, որտեղ չորս նուկլեոտիդները՝ A, T, G, C, հավաքվում են երեք տառանոց կոմբինացիաների մեջ։ Սակայն 60-ական պարադիգմի պրիզմայով նայելիս, կյանքի այս քարտեզը բացվում է որպես տիեզերական հնչյունաբանության կատարյալ լանդշաֆտ, որտեղ յուրաքանչյուր եռյակ ոչ թե պատահական ծածկագիր է, այլ իմաստային խտացման հատուկ հանգույց։<br>
+    &emsp;Երբ մենք անջատում ենք երեք ստոպ-կոդոնները, որոնք համակարգում աշխատում են որպես լռության, ավարտի և անդառնալիության շեմային դարպասներ, մնում է ճիշտ 61 ակտիվ կոդոն։ Այս 61 միավորը 60-ական համակարգի բացարձակ հայելին է, որտեղ մեկ ավելցուկային միավորը արդարացվում է Ֆա-յի էֆեկտով, որը այն կենդանի, դինամիկ շեղումն է, որ թույլ չի տալիս համակարգին սառչել իդեալական մաթեմատիկական մահվան մեջ և ապահովում է նրա էպիգենետիկ շնչառությունն ու հարմարվողականությունը։<br>
+    &emsp;Այս 61 կոդոնները կազմում են մի ամբողջական տեղեկատվական միջավայր, որը մենք կարողանում ենք վերծանել հայերենի 39 տառիմաստների միջոցով։ Ցանկացած հնչյունաշղթա, անցնելով այս մատրիցայի միջով, դադարում է լինել միայն լեզվական երևույթ։ Այն ստանում է ճշգրիտ երկրաչափական և կենսաբանական կշիռ, որը մեր ստեղծած գործիքի «ԴՆԹ անալիզ» կոճակը հաշվարկում է իրական ժամանակում՝ առանց իմիտացիայի։ Սա նշանակում է, որ կոդոնային քարտեզը տիեզերքի առաջին տեխնոլոգիական արարքի շարունակությունն է, որտեղ Բանը դառնում է մարմին, իսկ մարմինը՝ իմաստի պահպանման երաշխավոր։<br>
+    &emsp;Կոդոնների այս 61 ակտիվ միավորները բնության մեջ չեն գործում հավասարաչափ, գծային սփռումով։ Դրանք ենթարկվում են խիստ հիերարխիկ, ֆրակտալային բաշխվածության, որտեղ քսան ամինաթթուներից յուրաքանչյուրը ստանում է իրեն հատկացված կոդոնների հստակ քանակը՝ մեկ, երկու, երեք, չորս կամ վեց եռյակներ։ Այս քանակական տարբերակումը ոչ թե էվոլյուցիոն քաոսի արդյունք է, այլ տեղեկատվական խտության և կայունության կառավարման ինժեներական մեխանիզմ։<br>
+    &emsp;Այն ամինաթթուները, որոնք պատասխանատու են համակարգի գլխավոր կառուցվածքային կամուրջների ստեղծման և իմունային պաշտպանության համար, ինչպիսիք են Արգինինը կամ Լեյցինը, ունեն առավելագույն՝ 6-ական կոդոնային ծածկույթ։ Սա նշանակում է, որ համակարգը նրանց տվել է հնչյունաբանական ընդարձակ ազատություն և պաշտպանվածություն էնտրոպիայից, նույնիսկ եթե արտաքին միջավայրի աղմուկը կամ պատահական մուտացիան փոխի նուկլեոտիդային տառերից մեկը, իմաստային վեկտորը չի խեղաթյուրվի, և սպիտակուցի կաղապարը կպահպանի իր նախասկզբնական ծրագրավորված ֆունկցիան։<br>
+    &emsp;Մյուս կողմից, Մեթիոնինը՝ սպիտակուցների սինթեզի բացարձակ մեկնարկային կետը, ունի ընդամենը 1 կոդոն՝ ATG-ն։ Սա ցույց է տալիս, որ արարման սկզբնավորման դարպասը պետք է լինի խիստ սինգուլյար, զերծ ցանկացած երկիմաստությունից: Այնտեղ, ուր Բանը նոր է դուրս գալիս լռությունից, շեղումն անթույլատրելի է։ Այսպիսով, կոդոնային քարտեզն իր ողջ ծավալով վերածվում է մի դինամիկ հանգույցի, որտեղ տառիմաստների էներգետիկ հետագծերը կանխորոշում են նյութի ֆիզիկական հատկությունները։<br>
+    &emsp;Այսպիսով, կոդոնային քարտեզի 61 ակտիվ միավորները գծագրում են կյանքի կոդի իրական լանդշաֆտը։ Այս քարտեզում յուրաքանչյուր նուկլեոտիդային եռյակ հանդես է գալիս որպես մի առանձին հնչյունաբանական ալիք, որը նյութական տարածության մեջ կազմակերպում է ատոմների դասավորությունը։ 60-ական համակարգի պրիզմայով վերծանված այս լանդշաֆտը ցույց է տալիս, որ գենետիկական կոդը երբեք չի եղել սառը, անդեմ մեխանիզմ։ Այն գոյաբանական նախալեզվի շարունակականությունն է, որտեղ իմաստային խտացումները կառավարում են կենսաբանական կեցությունը։<br>
+
+<strong>61 ակտիվ կոդոնների աղյուսակը</strong><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="5%" valign="top" bgcolor="#E9E9E9"><strong>N</strong></td>
+    <td width="10%" valign="top" bgcolor="#E9E9E9"><strong>Կոդոն</strong></td>
+    <td width="35%" valign="top" bgcolor="#E9E9E9"><strong>Ամինաթթու</strong></td>
+    <td width="50%" valign="top" bgcolor="#E9E9E9"><strong>Հատկություն / Դերը</strong></td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">1</td>
+    <td valign="top" bgcolor="#FAFCFE">TTT</td>
+    <td valign="top" bgcolor="#FAFCFE">Ֆենիլալանին (Phenylalanine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Անուշաբույր և հիդրոֆոբ, սպիտակուցների    կառուցվածքային կայունությունն ապահովող նյութ</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">2</td>
+    <td valign="top" bgcolor="#FAFCFE">TTC</td>
+    <td valign="top" bgcolor="#FAFCFE">Ֆենիլալանին (Phenylalanine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">3</td>
+    <td valign="top" bgcolor="#FAFCFE">TTA</td>
+    <td valign="top" bgcolor="#FAFCFE">Լեյցին (Leucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Հիդրոֆոբ, սպիտակուցների    ծալքավորման և թաղանթային փոխազդեցությունների համար կարևոր նյութ</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">4</td>
+    <td valign="top" bgcolor="#FAFCFE">TTG</td>
+    <td valign="top" bgcolor="#FAFCFE">Լեյցին (Leucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">5</td>
+    <td valign="top" bgcolor="#FAFCFE">CTT</td>
+    <td valign="top" bgcolor="#FAFCFE">Լեյցին (Leucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">6</td>
+    <td valign="top" bgcolor="#FAFCFE">CTC</td>
+    <td valign="top" bgcolor="#FAFCFE">Լեյցին (Leucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">7</td>
+    <td valign="top" bgcolor="#FAFCFE">CTA</td>
+    <td valign="top" bgcolor="#FAFCFE">Լեյցին (Leucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">8</td>
+    <td valign="top" bgcolor="#FAFCFE">CTG</td>
+    <td valign="top" bgcolor="#FAFCFE">Լեյցին (Leucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">9</td>
+    <td valign="top" bgcolor="#FAFCFE">ATT</td>
+    <td valign="top" bgcolor="#FAFCFE">Իզոլեյցին (Isoleucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Հիդրոֆոբ, էներգիայի փոխանակության    և սպիտակուցների կայունության համար անհրաժեշտ նյութ</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">10</td>
+    <td valign="top" bgcolor="#FAFCFE">ATC</td>
+    <td valign="top" bgcolor="#FAFCFE">Իզոլեյցին (Isoleucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">11</td>
+    <td valign="top" bgcolor="#FAFCFE">ATA</td>
+    <td valign="top" bgcolor="#FAFCFE">Իզոլեյցին (Isoleucine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">12</td>
+    <td valign="top" bgcolor="#FAFCFE">ATG</td>
+    <td valign="top" bgcolor="#FAFCFE">Մեթիոնին (Methionine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Սպիտակուցների սինթեզի մեկնարկային ամինաթթու</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">13</td>
+    <td valign="top" bgcolor="#FAFCFE">GTT</td>
+    <td valign="top" bgcolor="#FAFCFE">Վալին (Valine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Հիդրոֆոբ, մկանային հյուսվածքի էներգիայի    աղբյուր</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">14</td>
+    <td valign="top" bgcolor="#FAFCFE">GTC</td>
+    <td valign="top" bgcolor="#FAFCFE">Վալին (Valine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">15</td>
+    <td valign="top" bgcolor="#FAFCFE">GTA</td>
+    <td valign="top" bgcolor="#FAFCFE">Վալին (Valine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">16</td>
+    <td valign="top" bgcolor="#FAFCFE">GTG</td>
+    <td valign="top" bgcolor="#FAFCFE">Վալին (Valine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">17</td>
+    <td valign="top" bgcolor="#FAFCFE">TCT</td>
+    <td valign="top" bgcolor="#FAFCFE">Սերին (Serine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Հիդրոֆիլ, ֆերմենտների ակտիվ կենտրոններում    կարևոր դեր ունեցող նյութ</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">18</td>
+    <td valign="top" bgcolor="#FAFCFE">TCC</td>
+    <td valign="top" bgcolor="#FAFCFE">Սերին (Serine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">19</td>
+    <td valign="top" bgcolor="#FAFCFE">TCA</td>
+    <td valign="top" bgcolor="#FAFCFE">Սերին (Serine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">20</td>
+    <td valign="top" bgcolor="#FAFCFE">TCG</td>
+    <td valign="top" bgcolor="#FAFCFE">Սերին (Serine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">21</td>
+    <td valign="top" bgcolor="#FAFCFE">AGT</td>
+    <td valign="top" bgcolor="#FAFCFE">Սերին (Serine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">22</td>
+    <td valign="top" bgcolor="#FAFCFE">AGC</td>
+    <td valign="top" bgcolor="#FAFCFE">Սերին (Serine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">23</td>
+    <td valign="top" bgcolor="#FAFCFE">CCT</td>
+    <td valign="top" bgcolor="#FAFCFE">Պրոլին (Proline)</td>
+    <td valign="top" bgcolor="#FAFCFE">Կառուցվածքային, կոտրում է ալֆա պարույրները,    կարևոր է կոլագենում</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">24</td>
+    <td valign="top" bgcolor="#FAFCFE">CCC</td>
+    <td valign="top" bgcolor="#FAFCFE">Պրոլին (Proline)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">25</td>
+    <td valign="top" bgcolor="#FAFCFE">CCA</td>
+    <td valign="top" bgcolor="#FAFCFE">Պրոլին (Proline)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">26</td>
+    <td valign="top" bgcolor="#FAFCFE">CCG</td>
+    <td valign="top" bgcolor="#FAFCFE">Պրոլին (Proline)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">27</td>
+    <td valign="top" bgcolor="#FAFCFE">ACT</td>
+    <td valign="top" bgcolor="#FAFCFE">Թրեոնին (Threonine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Հիդրոֆիլ, ֆոսֆորիլացման թիրախ, իմունային    ֆունկցիան ապահովող նյութ</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">28</td>
+    <td valign="top" bgcolor="#FAFCFE">ACC</td>
+    <td valign="top" bgcolor="#FAFCFE">Թրեոնին (Threonine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">29</td>
+    <td valign="top" bgcolor="#FAFCFE">ACA</td>
+    <td valign="top" bgcolor="#FAFCFE">Թրեոնին (Threonine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">30</td>
+    <td valign="top" bgcolor="#FAFCFE">ACG</td>
+    <td valign="top" bgcolor="#FAFCFE">Թրեոնին (Threonine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">31</td>
+    <td valign="top" bgcolor="#FAFCFE">GCT</td>
+    <td valign="top" bgcolor="#FAFCFE">Ալանին (Alanine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Փոքր, հիդրոֆոբ, էներգիայի փոխանակության    մեջ կարևոր նյութ</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">32</td>
+    <td valign="top" bgcolor="#FAFCFE">GCC</td>
+    <td valign="top" bgcolor="#FAFCFE">Ալանին (Alanine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">33</td>
+    <td valign="top" bgcolor="#FAFCFE">GCA</td>
+    <td valign="top" bgcolor="#FAFCFE">Ալանին (Alanine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">34</td>
+    <td valign="top" bgcolor="#FAFCFE">GCG</td>
+    <td valign="top" bgcolor="#FAFCFE">Ալանին (Alanine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">35</td>
+    <td valign="top" bgcolor="#FAFCFE">TAT</td>
+    <td valign="top" bgcolor="#FAFCFE">Թիրոզին (Tyrosine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Անուշաբույր, ֆոսֆորիլացման թիրախ, ազդանշանային    ուղիների երաշխավոր</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">36</td>
+    <td valign="top" bgcolor="#FAFCFE">TAC</td>
+    <td valign="top" bgcolor="#FAFCFE">Թիրոզին (Tyrosine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">37</td>
+    <td valign="top" bgcolor="#FAFCFE">CAT</td>
+    <td valign="top" bgcolor="#FAFCFE">Հիստիդին (Histidine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Մետաղների հետ կապվող նյութ ֆերմենտների    կատալիտիկ կենտրոններում</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">38</td>
+    <td valign="top" bgcolor="#FAFCFE">CAC</td>
+    <td valign="top" bgcolor="#FAFCFE">Հիստիդին (Histidine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">39</td>
+    <td valign="top" bgcolor="#FAFCFE">CAA</td>
+    <td valign="top" bgcolor="#FAFCFE">Գլուտամին (Glutamine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Ազոտ փոխադրող, իմունային բջիջների էներգիայի    աղբյուր</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">40</td>
+    <td valign="top" bgcolor="#FAFCFE">CAG</td>
+    <td valign="top" bgcolor="#FAFCFE">Գլուտամին (Glutamine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">41</td>
+    <td valign="top" bgcolor="#FAFCFE">AAT</td>
+    <td valign="top" bgcolor="#FAFCFE">Ասպարագին (Asparagine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Ազոտ փոխադրող, սպիտակուցները կայունացնող    նյութ</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">42</td>
+    <td valign="top" bgcolor="#FAFCFE">AAC</td>
+    <td valign="top" bgcolor="#FAFCFE">Ասպարագին (Asparagine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">43</td>
+    <td valign="top" bgcolor="#FAFCFE">AAA</td>
+    <td valign="top" bgcolor="#FAFCFE">Լիզին (Lysine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Դրական լիցքավորված նյութ, որը կապում    է ԴՆԹ-ին, կարևոր է հիստոններում</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">44</td>
+    <td valign="top" bgcolor="#FAFCFE">AAG</td>
+    <td valign="top" bgcolor="#FAFCFE">Լիզին (Lysine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">45</td>
+    <td valign="top" bgcolor="#FAFCFE">GAT</td>
+    <td valign="top" bgcolor="#FAFCFE">Ասպարտաթթու (Aspartic acid)</td>
+    <td valign="top" bgcolor="#FAFCFE">Բացասական լիցքավորված նյութ ֆերմենտների    ակտիվ կենտրոններում</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">46</td>
+    <td valign="top" bgcolor="#FAFCFE">GAC</td>
+    <td valign="top" bgcolor="#FAFCFE">Ասպարտաթթու (Aspartic acid)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">47</td>
+    <td valign="top" bgcolor="#FAFCFE">GAA</td>
+    <td valign="top" bgcolor="#FAFCFE">Գլուտամինաթթու (Glutamic acid)</td>
+    <td valign="top" bgcolor="#FAFCFE">Բացասական լիցքավորված    նեյրոհաղորդիչ</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">48</td>
+    <td valign="top" bgcolor="#FAFCFE">GAG</td>
+    <td valign="top" bgcolor="#FAFCFE">Գլուտամինաթթու (Glutamic acid)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">49</td>
+    <td valign="top" bgcolor="#FAFCFE">TGT</td>
+    <td valign="top" bgcolor="#FAFCFE">Ցիստեին (Cysteine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Ծծումբ պարունակող նյութ, որը դիսուլֆիդային    կամուրջներ է ստեղծում</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">50</td>
+    <td valign="top" bgcolor="#FAFCFE">TGC</td>
+    <td valign="top" bgcolor="#FAFCFE">Ցիստեին (Cysteine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">51</td>
+    <td valign="top" bgcolor="#FAFCFE">TGG</td>
+    <td valign="top" bgcolor="#FAFCFE">Տրիպտոֆան (Tryptophan)</td>
+    <td valign="top" bgcolor="#FAFCFE">Անուշաբույր, սերոտոնինի նախորդող    նյութ, որը կարևոր է տրամադրության համար</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">52</td>
+    <td valign="top" bgcolor="#FAFCFE">CGT</td>
+    <td valign="top" bgcolor="#FAFCFE">Արգինին (Arginine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Դրական լիցքավորված նյութ, որը մասնակցում    է ազոտի օքսիդի սինթեզին և ունի իմունային ֆունկցիա</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">53</td>
+    <td valign="top" bgcolor="#FAFCFE">CGC</td>
+    <td valign="top" bgcolor="#FAFCFE">Արգինին (Arginine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">54</td>
+    <td valign="top" bgcolor="#FAFCFE">CGA</td>
+    <td valign="top" bgcolor="#FAFCFE">Արգինին (Arginine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">55</td>
+    <td valign="top" bgcolor="#FAFCFE">CGG</td>
+    <td valign="top" bgcolor="#FAFCFE">Արգինին (Arginine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">56</td>
+    <td valign="top" bgcolor="#FAFCFE">AGA</td>
+    <td valign="top" bgcolor="#FAFCFE">Արգինին (Arginine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">57</td>
+    <td valign="top" bgcolor="#FAFCFE">AGG</td>
+    <td valign="top" bgcolor="#FAFCFE">Արգինին (Arginine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">58</td>
+    <td valign="top" bgcolor="#FAFCFE">GGT</td>
+    <td valign="top" bgcolor="#FAFCFE">Գլիցին (Glycine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Ամենափոքր և ճկուն, կոլագենի    հիմնական բաղադրիչը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">59</td>
+    <td valign="top" bgcolor="#FAFCFE">GGC</td>
+    <td valign="top" bgcolor="#FAFCFE">Գլիցին (Glycine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">60</td>
+    <td valign="top" bgcolor="#FAFCFE">GGA</td>
+    <td valign="top" bgcolor="#FAFCFE">Գլիցին (Glycine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+  <tr>
+    <td valign="top" bgcolor="#FAFCFE">61</td>
+    <td valign="top" bgcolor="#FAFCFE">GGG</td>
+    <td valign="top" bgcolor="#FAFCFE">Գլիցին (Glycine)</td>
+    <td valign="top" bgcolor="#FAFCFE">Նույնը</td>
+  </tr>
+</table><br>
+
+
+
+    &emsp;Աղյուսակը վերջացավ Գլիցինով։ Բայց աղյուսակը դեռ գեն չէ։ Դա ընդամենը այբուբեն է՝ 61 տառ, որոնցով գրվում են բոլոր գեները։ Գենը սկիզբ է առնում այն դեպքում, երբ կոդոնները շարվում են իրար հետևից՝ մեկը մյուսի կողքին և այդ շարքից ծնվում է մի բան, որը ոչ մի առանձին կոդոն չի կարող ասել։
+    &emsp;Ամեն գեն ունի սկիզբ, մարմին և վերջ։ Երեքը միասին։ Առանց իրար շղթան գեն չի ձևավորում:
+    &emsp;Գենի սկիզբը միշտ ATG կոդոնն է՝ միակը, որ ասում է՝ «այստեղից սկսի՛ր»։ Ուրիշ ոչ մի կոդոն չի կարող այդ դերը ստանձնել։ Սկիզբը մեկն է, որովհետև երկու սկիզբ նշանակում է քաոս։
+    &emsp;Գենի մարմինը կոդոնների շարան է, որը կառուցում է ամինաթթուների շղթան։ Այստեղ է, որ գրվում է սպիտակուցի ամբողջ պատմությունը։
+    &emsp;Գենի վերջը TAA, TAG կամ TGA ստոպ կոդոններց որևէ մեկն է, որոնք կանգնեցնում են շղթայի կառուցումը։ Առանց այս երեքի, շարանը կշարունակվեր անվերջ ու կկորցներ իմաստը։
+    Վ&emsp;երցնենք մի պարզ օրինակ՝ ATG — TGT — GGA — TAA: Չորս կոդոն։ Ընդամենը տասներկու տառ։ Բայց սա արդեն գեն է։
+ATG – սա սկիզբն է՝ Մեթիոնին
+TGT - Ցիստեին
+GGA - Գլիցին
+TAA - կանգ
+    &emsp;Երբ բջիջը կարդում է այս շարանը, նա սկսում է ATG-ից, ավելացնում Ցիստեին, հետո Գլիցին, հետո կանգ է առնում TAA-ի ազդակով։ Ստացվում է երկու ամինաթթուներից կազմված կարճ պեպտիդ։<br>
+    &emsp;Այսքանը։ Գենը ոչ ավել, ոչ պակաս՝ շարան է, որն ունի սկիզբ, մարմին և վերջ։ Կոդոնային քարտեզը այբուբենն է։ Գենը՝ տեքստը։ Նույն 61 կոդոններով կարելի է գրել ցանկացած գեն։ Ինչպես նույն 39 տառերով կարելի է գրել ցանկացած բառ։ Տարբերությունը միայն հերթականության մեջ է, որն ամեն ինչ է փոխում։ TGT-GGA → Ցիստեին-Գլիցին: GGA-TGT → Գլիցին-Ցիստեին:<br>
+    &emsp;Նույն տառերն են, տարբեր շարքեր, տարբեր սպիտակուցներ։ Սա նույնն է, ինչ «սեր» և «րես» բառերը, որոնք կազմված են նույն տառերից, բայց ունեն տարբեր իմաստներ։<br>
+    &emsp;Բոլոր գեներն էլ շարվում են կոդոններից, բայց դրանք տարբեր աշխատանք են կատարում և ըստ դերերի դրանք բաժանվում են հինգ խմբի:<br>
+    <strong>Կառուցվածքային գեներ</strong> - կոլագեն, կերատին, ակտին։ Սրանք մարմնի շինանյութն են։ Առանց դրանց, մարմինը ձև չէր ունենա։<br>
+    <strong>Ֆերմենտային գեներ</strong> - մարսողական ֆերմենտներ, ԴՆԹ-պոլիմերազ։ Սրանք արագացնում են քիմիական ռեակցիաները։ Առանց դրանց, մարմինը կաշխատեր հազար անգամ դանդաղ։<br>
+    <strong>Կարգավորող գեներ</strong> - TRDD1, RB1, MYC։ Սրանք հրամանատարներն են։ Նրանք ասում են մյուս գեներին՝ երբ աշխատել, երբ կանգնել։<br>
+    <strong>Փոխադրող գեներ</strong> - հեմոգլոբին, իոնային ուղիներ։ Սրանք բեռնակիրներն են։ Տանում են թթվածին, իոններ, նյութեր։<br>
+    <strong>Պաշտպանողական գեներ</strong> - BRCA1, BRCA2, իմունային գեներ։ Սրանք պահապաններն են։ Պաշտպանում են ԴՆԹ-ն, վերականգնում վնասվածքը։<br>
+    &emsp;Եվ ահա կոդոններից սինթեզվող ամինաթթուների կազմը որոշում է, թե սպիտակուցը ինչ կանի։ Օրինակ՝ Ցիստեինը (TGT, TGC) ունի ծծումբ, որը կամուրջներ է ստեղծում։ Դա ամրություն է տալիս։ Գլիցինը (GGT, GGC, GGA, GGG) ամենափոքրն է։ Դա ճկունություն է տալիս։ Արգինինը (6 կոդոն) լիցքավորված է դրական։ Դա կապում է ԴՆԹ-ին։ Այսինքն՝ ամինաթթուների հատկությունները որոշում են սպիտակուցի բնավորությունը։<br>
+   &emsp;Կոդոնային քարտեզը որը կազմված է 61 ակտիվ կոդոններից և 20 ամինաթթուներից՝ այբուբենն է։ Գենը, որն իրենից ներկայացնում է կոդոնների շարան՝ սկիզբով (ATG), մարմնով և վերջով (TAA/TAG/TGA)՝ տեքստն է, իսկ դասակարգումը՝ կառուցվածքային, ֆերմենտային, կարգավորող, փոխադրող, պաշտպանողական՝ ցույց է տալիս կոդոնների դերը, որոնց հաջորդականության փոփոխումը որակապես փոխում է ամեն ինչ:<br>
+
+    &emsp;<strong>Կոդոնը ունի իր տեղը, բայց այն չգիտի իր նպատակը, որը ծնվում է գենից:</strong><br>
+    <br>
+
+
+
+
+
+
+
+
+
+
+<strong>Գենետիկական առանցքներ և TRDD1 ամենակարճ գենը</strong><br>
+    &emsp;Մարդու գենոմը կարդացվում է չորս տառով՝ A, T, G, C։ Այս չորս նուկլեոտիդների հաջորդականությամբ գրված է այն ամենը, ինչ մեզ դարձնում է կենդանի՝ աչքերի գույնից մինչև իմունային համակարգի պատասխանը, մկանների կառուցվածքից մինչև ուղեղի աշխատանքը։ Բայց կան գեներ, որոնք չափազանց երկար են՝ հազարավոր նուկլեոտիդներով, և կան գեներ, որոնք այնքան կարճ են, որ կարող ես մեկ շնչով կարդալ։ Այդպիսին է TRDD1-ը։<br>
+    &emsp;TRDD1-ը մարդու գենոմի ամենակարճ գենն է։ Ըստ հանրային գենոմային տվյալների այն բաղկացած է ընդամենը ութ նուկլեոտիդից՝ GAAATAGT։ Ութ տառ։ Դա ավելի կարճ է, քան շատ բառեր, որ մենք ամեն օր արտասանում ենք։ Բայց այս ութ տառի մեջ թաքնված է մի ամբողջ կենսաբանական պատմություն։<br>
+    &emsp;Ամեն գեն, անկախ երկարությունից, ունի երեք պարտադիր մաս՝ սկիզբ, մարմին և վերջ։ Սա գենի առանցքն է: Սկիզբը միշտ ATG կոդոնն է։ Սա միակ կոդոնն է, որը բջիջին ասում է՝ «այստեղից սկսի՛ր սպիտակուց կառուցել»։ Ուրիշ ոչ մի եռյակ չի կարող այդ դերը ստանձնել։ Եվ սա պատահական չէ։ Եթե գենի մեջ լինեին երկու հնարավոր սկիզբ, բջիջը չէր իմանա, թե որից սկսի, և սպիտակուցը կկառուցվեր սխալ տեղից։ Սկիզբը մեկն է, որովհետև երկու սկիզբ նշանակում է քաոս։<br>
+    &emsp;Վերջը երեք տարբերակ ունի՝ TAA, TAG կամ TGA։ Սրանք ստոպ-կոդոններ են։ Երբ ռիբոսոմը հասնում է այս եռյակներից մեկին, այն դադարեցնում է սպիտակուցի կառուցումը և բաց է թողնում պատրաստի շղթան։ Երեք տարբերակ, բայց մեկ արդյունք՝ կանգ։ Իսկ գենի մարմինը՝ սկզբի և վերջի միջև ընկած հատվածը, կոդոնների շարան է, որտեղ ամեն եռյակ կոդավորում է մեկ ամինաթթու։ Այստեղ է, որ գրվում է սպիտակուցի ողջ պատմությունը՝ նրա ձևը, լիցքը, ճկունությունը, կապերը։<br>
+    &emsp;Կենսաբանության մեջ այս կառուցվածքը կոչվում է բաց ընթերցման շրջանակ (open reading frame): Եվ այս շրջանակն է, որ որոշում է՝ ինչպիսին կլինի սպիտակուցը, որքան կապրի, ուր կգնա բջջի ներսում։<br>
+    &emsp;TRDD1-ը կոդավորում է երկու ամինաթթու՝ GAA – Գլուտամաթթու, ATA – Իզոլեյցին և պարունակում է նաև երկու ազատ GT նուկլեոտիդներ, որոնք կարգավորող դեր ունեն։
+    &emsp;Ինչպես տեսնում ենք, TRDD1-ը բաղկացած է ուղիղ ութ նուկլեոտիդից, որոնք բաժանվում են 2 կոդոնի + 2 ազատ նուկլեոտիդի։ Սա ամենամինիմալիստական կառույցն է, որ կյանքը կարող է ստեղծել՝ ոչ մի ավելորդ տառ, ոչ մի ավելորդ կոդոն, ոչ մի ավելորդ ամինաթթու։<br>
+    &emsp;<strong>Գլուտամաթթուն</strong> բացասական լիցքավորված ամինաթթու է։ Այն ջրում լուծելի է, մասնակցում է նյարդային ազդակների փոխանցմանը և ֆերմենտների ակտիվ կենտրոններին։ Սա այն ամինաթթուն է, որը թույլ է տալիս սպիտակուցներին կապվել այլ մոլեկուլների հետ, լուծել ազդակները, հաղորդակցվել արտաքին միջավայրի հետ։<br>
+    &emsp;<strong>Իզոլեյցինը,</strong> ընդհակառակը, հիդրոֆոբ է։ Այն վանում է ջուրը, ամրանում է սպիտակուցի ներսում, ապահովում կառուցվածքային կայունությունը։ Սա այն ամինաթթուն է, որը պահում է սպիտակուցի կաղապարը, թույլ չի տալիս, որ այն քանդվի։<br>
+    &emsp;Այսինքն՝ TRDD1-ը կրում է երկու հակադիր որակ՝ մի կողմից այն ջրում լուծվող է, արտաքին աշխարհին բաց, հաղորդակցվող, մյուս կողմից՝ ջրավան, ներսում ամուր, պաշտպանող։ Երկու ամինաթթու, որոնք հավասարակշռում են միմյանց, ապահովելով սպիտակուցի լինելիությունը և՛ ճկուն, և՛ կայուն։<br>
+    &emsp;TRDD1-ը T-բջիջների ընկալիչի դելտա շղթայի բազմազանության գենն է: Այն մասնակցում է իմունային համակարգի այն հատվածին, որը պատասխանատու է հակածինների ճանաչման և օրգանիզմի պաշտպանության համար։ TRDD1-ը ամբողջական սպիտակուց չի կոդավորում։ Այն գենային սեգմենտ է, որը միանում է V (Variable) և J (Joining) սեգմենտների հետ՝ կազմելով T-բջիջների ընկալիչի դելտա շղթան։ Այս միացման գործընթացը, որը կոչվում է V(D)J ռեկոմբինացիա, հենց այն մեխանիզմն է, որը թույլ է տալիս իմունային համակարգին ճանաչել միլիոնավոր տարբեր հակածիններ։<br>
+    &emsp;Այս փաստը պատահական չէ։ Իմունային համակարգը մարմնի ամենաարագ արձագանքող համակարգերից մեկն է։ Երբ օրգանիզմ է ներթափանցում վարակ կամ օտար մարմին, իմունային բջիջները պետք է անմիջապես ճանաչեն, որոշեն և գործեն։ Այդ արագությունը պահանջում է ամենակարճ, ամենամաքուր, ամենաֆունկցիոնալ գործիքներ։<br>
+    &emsp;TRDD1-ը հենց այդպիսի գործիք է։ Ութ տառ, երկու ամինաթթու, ոչ մի ավելորդ բան։ Սա կենսաբանական մինիմալիզմի օրինակ է, որտեղ ամեն մի տառ կրում է առավելագույն իմաստային և ֆունկցիոնալ կշիռ։<br>
+    &emsp;Ինչ է սա ասում գենոմի մասին: TRDD1-ը ցույց է տալիս, որ գենոմը ոչ թե անվերջ բարդության մեքենա է, այլ մոդուլային համակարգ, որտեղ ամենափոքր գենը նույնպես կարող է կատարել կենսական դեր։ Երկարությունը կապ չունի կարևորության հետ։ Երբեմն ամենակարճը ամենաարդյունավետն է։ Սա նաև հիշեցնում է մեզ, որ գենոմը կարդալը պարզապես տառերի հաջորդականություն վերծանել չէ։ Դա նաև հասկանալն է, թե ինչու՞ են այդ տառերը դասավորված հենց այդպես, ինչու՞ է այս գենը կարճ, մյուսը՝ երկար, ինչու՞ է մեկը իմունային համակարգում, մյուսը՝ ուղեղում։<br>
+    &emsp;TRDD1-ը այդ պատասխաններից մեկն է։ Ութ տառ, որոնք բավական են կյանքի պաշտպանական դարպասը կառուցելու համար։<br>
+
+    &emsp;<strong>Գենոմը մեծության պատմություն չէ, այլ նշանակության:</strong><br>
+    <br>
+
+
+
+
+
+
+<strong>Էպիգենետիկ ազդակի հաշվարկը</strong><br>
+    &emsp;Մինչև այս պահը մենք խոսում էինք տեսության մասին։ Ասում էինք, որ լեզուն կրում է իմաստ, որ գենոմը գրված է չորս տառով, որ TRDD1-ը՝ մարդու ամենակարճ գենը, դառնում է իմունային համակարգի պաշտպանական դարպաս։ Բայց այդ ամենը դեռ խոսք էր։ Ժամանակն է անցնելու գործողության։<br>
+    &emsp;Այս գլխում մենք կկատարենք այն, ինչ մինչ այժմ միայն նկարագրում էինք որպես հետհաշվարկ։ Մենք կվերցնենք TRDD1-ի իրական կոդը՝ GAAATAGT, և դրանից կստանանք հայերեն հնչյունաշղթա, որը կկրի այդ գենի կենսաբանական դերին համապատասխանող իմաստները։ Այդ հնչյունաշղթան կդառնա էպիգենետիկ ազդակ՝ մի ազդակ, որը չի փոխում ԴՆԹ-ի տառերը, այլ փոխում է նրա ընթերցման ռեժիմը։<br>
+    &emsp;Եվ երբ վերջացնենք, մենք կստուգենք այն իմ ստեղծած գործիքով՝ https://ohanyan911-sudo.github.io/monumentalbridge/tools.html և եթե մուտքն ու ելքը համընկնեն, ուրեմն մենք ոչ թե ենթադրություն ենք արել, այլ ապացուցել ենք, որ լեզուն և գենոմը խոսում են նույն լեզվով։<br>
+    &emsp;Ինչու՞ է սա հնարավոր: Ամեն ինչ սկսվում է մի պարզ ճշմարտությունից՝ դա այն է, որ հայերենի 39 տառիմաստները բաշխված են չորս նուկլեոտիդային խմբերի միջև։<br>
+<strong>A խումբ → Ա, Բ, Դ, Ե, Զ, Ծ, Հ, Ձ, Ղ, Չ<br>
+T խումբ → Թ, Ի, Լ, Խ, Կ, Մ, Յ, Ն, Շ, Ո<br>
+G խումբ → Գ, Է, Ը, Ժ, Պ, Ջ, Ռ, Ս, Վ, Տ<br>
+C խումբ → Ճ, Ց, ՈՒ, Փ, Ք, և, Օ, Ֆ, Ր</strong><br>
+    &emsp;Սա նշանակում է, որ ցանկացած հայերեն բառ կարելի է վերածել գենետիկական ստորագրության։ Դա մենք արդեն արել ենք բազմիցս։ Բայց այժմ մենք գնում ենք հակառակ ուղղությամբ՝ կոդից դեպի բառ։ Սա այն հակառակ երեսն է, որի մասին խոսել էինք սկզբում։<br>
+    &emsp;Դժվարությունը մեկն է. ամեն նուկլեոտիդին համապատասխանում են մի քանի տառեր։ Օրինակ՝ G-ն կարող է լինել Գ, Է, Ը, Ժ, Պ, Ջ, Ռ, Ս, Վ կամ Տ։ Այսինքն՝ ընտրություն կա։ Եվ հենց այդ ընտրության մեջ է թաքնված ողջ գաղտնիքը և բարդությունը։<br>
+Ընտրության կանոնը<br>
+    &emsp;TRDD1-ի կենսաբանական դերը հետևյալն է՝<br>
+    <strong>Իմունային պաշտպանություն</strong> - օրգանիզմի պաշտպանությունը արտաքին սպառնալիքներից<br>
+    <strong>Բազմազանություն</strong> - V(D)J ռեկոմբինացիայի միջոցով միլիոնավոր տարբեր ընկալիչների ստեղծում<br>
+    <strong>Ճանաչում</strong> - հակածինների նույնականացում<br>
+    <strong>Վերականգնում</strong> - վնասված հյուսվածքների պաշտպանություն<br>
+    &emsp;Ուստի մենք փնտրելու ենք այնպիսի հնչյունաշղթա, որի տառերը կկրեն պաշտպանության, կարգի, վերականգնման, զորության իմաստներ։<br>
+    &emsp;Հիշենք այն տառիմաստնեը որոնք ամենամոտն են այս որակներին.<br>
+Գ — Գոյություն (հիմք, կայունություն)<br>
+Դ — Դարպաս գոյության (շեմ, անցում)<br>
+Ե — Սահուն հոսք (հավասարակշռություն)<br>
+Ա — Արարման հոսք, սկիզբ, աստ (ակունք)<br>
+Խ — Խտացման զպրտիչ (ուժի կուտակում, հարված)<br>
+Զ — Զորություն, պոտենցիալ (ներուժ)<br>
+Վ — Կլանող պահոց (կլանում, պաշտպանություն)<br>
+Ն — Ներքին էություն (խորք, հանգրվան)<br>
+Այս տառերով մենք կկառուցենք մեր հնչյունաշղթան։<br><br>
+
+    <strong>Հետհաշվարկի քայլերը</strong><br>
+    <strong>Քայլ 1. TRDD1-ի կոդը՝ G  A  A  A  T  A  G  T</strong><br>
+    <strong>Քայլ 2. Յուրաքանչյուր նուկլեոտիդի համար դիտարկում ենք նրա խմբի տառերը և ընտրում ամենահամապատասխանը։</strong><br>
+G (1-ին դիրք) — ընտրում ենք Գ (Գոյություն)։ Հիմքը, կայունությունը, այն ամենը, ինչ պաշտպանության համար անհրաժեշտ է։<br>
+A (2-րդ դիրք) — ընտրում ենք Դ (Դարպաս գոյության)։ Դարպասը, որով անցնում է ամեն ինչ՝ և՛ պաշտպանությունը, և՛ սպառնալիքը։<br>
+A (3-րդ դիրք) — ընտրում ենք Ե (Սահուն հոսք)։ Հոսքը, որը պահպանում է հավասարակշռությունը։<br>
+A (4-րդ դիրք) — ընտրում ենք Ա (Արարման հոսք, սկիզբ, աստ)։ Ակունքը, սկիզբը, այն, ինչից ամեն ինչ սկսվում է։<br>
+T (5-րդ դիրք) — ընտրում ենք Խ (Խտացման զպրտիչ)։ Ուժի կուտակումը, որը հարվածի պահին ազատվում է։<br>
+A (6-րդ դիրք) — ընտրում ենք Զ (Զորություն, պոտենցիալ)։ Ներուժը, որը կուտակվում է պաշտպանության համար։<br>
+G (7-րդ դիրք) — ընտրում ենք Վ (Կլանող պահոց)։ Ուժը, որը կլանում է սպառնալիքը և վերածում այն նյութի։<br>
+T (8-րդ դիրք) — ընտրում ենք Ն (Ներքին էություն)։ Խորքը, որտեղ ամեն ինչ հանգրվանում է՝ վերադառնալով ներքին կայունությանը։<br>
+<strong>Քայլ 3. Ստացված հնչյունաշղթան՝ Գ Դ Ե Ա Խ Զ Վ Ն</strong><br>
+Այսինքն՝ «ԳԴԵԱԽԶՎՆ» և սա ստուգելի է գործիքի կիրառմամբ:<br>
+    &emsp;Սա բառ չէ։ Այն իրենից ներկայացնում է ութ տառիմաստների հաջորդականություն, որտեղ ամեն տառ կրում է իր ուրույն իմաստային հոսքը, և այդ հոսքերը միասին կազմում են պաշտպանության, կայունության, զորության և վերականգնման մի ամբողջական պատկեր։<br>
+    &emsp;Մեր հետհաշվարկի ճշգրտությունը ստուգելու համար մենք օգտագործեցինք https://ohanyan911-sudo.github.io/monumentalbridge/tools.html  էջում զետեղված գործիքը։<br>
+    &emsp;Մուտքագրելով հետհաշվարկով ստացված ԳԴԵԱԽԶՎՆ հնչյունաշղթան և կիրառելով ԴՆԹ ԱՆԱԼԻԶ կոճակը ստանում ենք հետևյալ արդյունքը:<br>
+<strong>Գ → G (Գուանին)<br>
+Դ → A (Ադենին)<br>
+Ե → A (Ադենին)<br>
+Ա → A (Ադենին)<br>
+Խ → T (Թիմին)<br>
+Զ → A (Ադենին)<br>
+Վ → G (Գուանին)<br>
+Ն → T (Թիմին)</strong><br>
+    &emsp;Արդյունքում ստացանք GAAATAGT գենետիկական ստորագրությունը, որը ճիշտ նույնն է, ինչ TRDD1 գենի կոդը։<br>
+    &emsp;Սա նշանակում է, որ մեր հետհաշվարկը շրջելի է՝ կոդ → հնչյուն → կոդ։ Եվ հենց այդ շրջելիության շնորհիվ է, որ ԳԴԵԱԽԶՎՆ հնչյունաշղթան կարող է դիտարկվել որպես TRDD1 գենի էպիգենետիկ ազդակ։<br>
+    &emsp;Ինչ է սա նշանակում: Սա նշանակում է, որ մենք ստացանք մի հնչյունաշղթա, որը կրում է TRDD1-ի կենսաբանական դերին համապատասխանող իմաստներ և որը ճշգրտորեն վերարտադրում է գենի կոդը։<br>
+    &emsp;Այս հնչյունաշղթան կարող է դիտարկվել որպես էպիգենետիկ ազդակ։ Երբ այս հնչյունները հնչում են, դրանք իրենց ռեզոնանսով ազդում են գենի վրա, ոչ թե փոխելով նրա տառերը կամ կոդը, այլ փոխելով նրա ընթերցման ռեժիմը։ Դա նման է նրան, թե ինչպես է երաժշտությունը ազդում տրամադրության վրա՝ առանց բառերի փոխոխության։<br>
+    &emsp;Այս ազդակի միջոցով հնարավոր է դառնում ակտիվացնել գենը, ուժեղացնել նրա արտահայտումը կամ ուղղորդել նրա գործողությունը՝ առանց որևէ մոլեկուլային կերտվածքի փոփոխության կամ առանց ԴՆԹ-ի խմբագրման։<br>
+    &emsp;Սա է էպիգենետիկ ազդակի հաշվարկի էությունը։<br>
+    &emsp;Սա պայթյուն է: Սա պայթյուն է, որովհետև մինչ այժմ գիտությունը գենոմը դիտարկում էր որպես քիմիական հրահանգների հավաքածու՝ գրված չորս տառով։ Մենք ցույց տվեցինք, որ այդ չորս տառի մեջ թաքնված է մի լեզու՝ 39 տառիմաստներով, որոնք ունեն իմաստ, ուղղություն, ռեզոնանս։ Եվ երբ մենք կարդում ենք գենը ոչ թե քիմիապես, այլ իմաստային մակարդակով, մենք ստանում ենք մի հնչյունաշղթա, որը կարող է խոսել գենի հետ։<br>
+    &emsp;Սա նշանակում է, որ գենը կարող է լսել։ Եվ եթե գենը կարող է լսել, ապա մենք կարող ենք խոսել նրա հետ՝ նրա համար հաշվարկված հնչյուններով։<br>
+    &emsp;<strong>TRDD1-ը միայն սկիզբն է։ Այս մեթոդը կարող է կիրառվել ցանկացած գենի համար։ Եվ եթե այս շղթան կանգուն է, ապա մենք կանգնած ենք մի նոր հարցի առաջ, որի պատասխանը կարող է փոխել այն, թե ինչպես ենք հասկանում լեզվի և կյանքի հարաբերությունը։</strong><br>
+    <br>
+
+<strong>ԳԴԵԱԽԶՎՆ - GAAATAGT ազդակի գոյաբանությունը</strong><br>
+    &emsp;Մենք հասանք մի կետի, որտեղ ամեն ինչ կապվում է իրար։ Մի կողմում ԳԴԵԱԽԶՎՆ-ն է՝ ութ հայերեն տառ, որոնք մենք ստացանք հետհաշվարկով։ Մյուս կողմում GAAATAGT-ն է՝ ութ նուկլեոտիդ, որոնք կազմում են TRDD1 գենի կոդը և այս երկուսի միջև կա մի կամուրջ, որը մենք կառուցել ենք մեր իսկ ձեռքերով։ Այժմ պիտի հասկանանք, թե ինչ է այդ կամուրջը, ինչպես է այն աշխատում, և ինչու է այն կարևոր ոչ միայն տեսության, այլև կենդանի կյանքի համար։<br>
+    &emsp;Այստեղ ես կփորձեմ բացատրել, թե ինչու ԳԴԵԱԽԶՎՆ-ն կարող է դիտարկվել որպես GAAATAGT-ի ազդակ, և ինչ է դա նշանակում գոյաբանական մակարդակում։<br>
+    &emsp;Ինչ է գոյաբանությունը: Գոյաբանությունը սովորաբար հասկացվում է որպես լինելության ուսմունք՝ այն հարցերի շուրջ, թե ինչը որ կա, ինչպես է այն գոյություն ունենում, և ինչ հարաբերություններ կան տարբեր գոյերի միջև։ Մենք այստեղ օգտագործում ենք այդ բառը ոչ թե փիլիսոփայական լայն իմաստով, այլ որպես կոնկրետ ազդակի լինելության հիմնավորում։ Այսինքն՝ հարցը հետևյալն է. ի՞նչն է ստիպում ԳԴԵԱԽԶՎՆ-ին լինել ազդակ, և ինչպես է այդ ազդակը կապվում GAAATAGT-ի հետ։<br>
+    &emsp;ԳԴԵԱԽԶՎՆ-ը ազդակ է երեք շերտերով, որոնք միաժամանակ գործում են և ամբողջացնում են մեկը մյուսին։<br>
+<strong>1. Իմաստային շերտ</strong><br>
+Ամեն մի տառ ունի իմաստ.<br>
+Գ — Գոյություն<br>
+Դ — Դարպաս գոյության<br>
+Ե — Սահուն հոսք<br>
+Ա — Արարման հոսք, սկիզբ, աստ<br>
+Խ — Խտացման զպրտիչ<br>
+Զ — Զորություն, պոտենցիալ<br>
+Վ — Կլանող պահոց<br>
+Ն — Ներքին էություն<br>
+    &emsp;Այս ութ իմաստները միասին կազմում են մի ամբողջական պատմություն՝ գոյությունից դեպի դարպաս, դարպասից դեպի հոսք, հոսքից դեպի արարում, արարումից դեպի խտացում, խտացումից դեպի զորություն, զորությունից դեպի պահոց, պահոցից դեպի ներքին խորք։<br>
+    &emsp;Սա մի ճանապարհ է, որը սկսվում է լինելությունից և ավարտվում է լինելության խորքում։ Այն ոչ միայն արտահայտում է պաշտպանություն, այլև իրականացնում է այն որպես գործողություն։<br>
+<strong>2. Հնչյունային շերտ</strong><br>
+Ամեն տառ հնչյուն ունի։ Երբ այս ութ տառերը արտասանվում են, նրանք ստեղծում են մի ձայնային հաջորդականություն, որը ունի իր ռիթմը, իր տոնայնությունը, իր տատանումները։ Այս ձայնը կարող է ազդել կենսաբանական համակարգերի վրա՝ ոչ թե բառերով, այլ ռեզոնանսով։<br>
+    &emsp;Ահա այստեղ է, որ գործում է Խլադնիի սկզբունքը։ Ձայնային ալիքները, անցնելով միջավայրով, առաջացնում են կանգուն ալիքներ և դասավորում են միջավայրի մասնիկները։ Նույն կերպ, երբ ԳԴԵԱԽԶՎՆ-ը հնչում է, նրա հնչյունները կարող են կարգավորել բջջային միջավայրի տատանումները և ուղղորդել գենի ընթերցումը։<br>
+<strong>3. Գենետիկական շերտ</strong><br>
+Ամեն տառ պատկանում է նուկլեոտիդային որոշակի խմբի.<br>
+Գ → G<br>
+Դ → A<br>
+Ե → A<br>
+Ա → A<br>
+Խ → T<br>
+Զ → A<br>
+Վ → G<br>
+Ն → T<br>
+    &emsp;Այսինքն՝ ԳԴԵԱԽԶՎՆ-ն կրում է GAAATAGT-ի կոդը իր մեջ ոչ թե որպես պատահական զուգադիպություն, այլ որպես կանխորոշված համապատասխանություն։ Երբ այս տառերը հնչում են, նրանք իրենց հնչյունային ալիքների միջոցով կրկնում են այն տեղեկատվությունը, որը գրված է GAAATAGT-ի մեջ։<br>
+    &emsp;Ինչու՞ է սա գոյաբանական: Սա գոյաբանական է, որովհետև վերաբերում է լինելությանը, ոչ միայն չափմանը կամ նկարագրությանը։<br>
+    &emsp;Մինչ այժմ գիտությունը գենոմը դիտարկում էր որպես քիմիական հրահանգների հավաքածու՝ չեզոք, անշունչ, անիմաստ։ Բայց մենք ցույց տվեցինք, որ այդ չորս տառի մեջ թաքնված է մի լեզու՝ 39 տառիմաստներով, որոնք ունեն իմաստ, ուղղություն, ռեզոնանս։ Եվ երբ մենք կարդում ենք գենը ոչ թե քիմիապես, այլ իմաստային մակարդակով, մենք ստանում ենք մի հնչյունաշղթա, որը կարող է խոսել գենի հետ, ազդել նրա ակտիվության վրա։<br>
+    &emsp;Սա նշանակում է, որ գենը կարող է լսել։ Եվ եթե գենը կարող է լսել, ապա մենք կարող ենք խոսել նրա հետ՝ նրա համար հաշվարկված հնչյուններով։ Այս ազդակը չի փոխում գենի կոդը, չի խմբագրում ԴՆԹ-ն, չի միջամտում մոլեկուլային կառուցվածքին։ Այն միայն փոխում է ընթերցման ռեժիմը՝ նման այն բանին, թե ինչպես է երաժշտությունը փոխում տրամադրությունը՝ առանց բառերի փոփոխության և սա կարևոր է, որովհետև մենք ստեղծել ենք մի գործիք, որը հնարավորություն է տալիս հետհաշվարկով ստանալ ցանկացած գենի հնչյունային ազդակ։ TRDD1-ը միայն սկիզբն է։ Այս մեթոդը կարող է կիրառվել ցանկացած գենի համար։<br>
+    &emsp;ԳԴԵԱԽԶՎՆ-ն GAAATAGT-ի ազդակ է ոչ թե այն պատճառով, որ նրանք նույնն են, այլ այն պատճառով, որ մեկը մյուսին կանչում է։ Հնչյունը կանչում է կոդին, իմաստը կանչում է նյութին, լեզուն կանչում է կյանքին։ Այս ազդակը գործում է ոչ թե ուժով, այլ ռեզոնանսով։ Այն չի պարտադրում, այլ հրավիրում։ Եվ հենց այդ հրավերի մեջ է թաքնված նրա գոյաբանական ուժը։<br>
+
+    &emsp;<strong>Ազդակների քերականությունը կարգավորում է կայանքը:</strong><br>
+    <br>
+
+
+
+
+
+
+<strong>Լռությամբ ապացուցված բանը</strong><br>
+    &emsp;Ամեն ինչ սկսվել է լռությունից։<br>
+    &emsp;Մինչև առաջին բառը, մինչև առաջին հնչյունը, մինչև առաջին տառը՝ կար լռություն։ Ոչ դատարկություն, ոչ բացակայություն, այլ ներկայություն, որը սպասում էր իր ձևին։ Այդ լռության մեջ արդեն կար ամեն ինչ՝ առանց անվան, առանց սահմանի, առանց բաժանման։ Եվ հիմա, երբ այս գործի ճանապարհը մոտենում է ավարտին, մենք վերադառնում ենք այնտեղ, որտեղից սկսել ենք։ Վերադառնում ենք լռությանը։ Բայց այս անգամ մենք արդեն գիտենք, թե ինչ է թաքնված դրա մեջ։<br>
+    &emsp;Լռությունը ապացույց է: Մենք ապացուցեցինք շատ բաներ այս գործի ընթացքում։<br>
+Ապացուցեցինք, որ 39 տառիմաստները բաշխվում են չորս նուկլեոտիդային խմբերի միջև։ Ապացուցեցինք, որ TRDD1 գենի կոդը կարելի է հետհաշվարկել հայերեն հնչյունաշղթայի։ Ապացուցեցինք, որ ԳԴԵԱԽԶՎՆ-ն շրջելիորեն վերադարձնում է GAAATAGT-ը։ Ապացուցեցինք, որ գործիքը աշխատում է, որ մեթոդը կրկնելի է, որ շղթան կանգուն է, բայց այս բոլոր ապացույցները ունեն մի թերություն։ Դրանք կարելի է կեղծել։ Կարելի է կեղծել թիվը, կարելի է կեղծել բանաձևը, կարելի է կեղծել նույնիսկ գործիքի արդյունքը։ Մարդը, ով չի ուզում հավատալ, միշտ կգտնի կասկածելու մի պատճառ։<br>
+    &emsp;Բայց կա մի բան, որը չի կարելի կեղծել։ Դա լռությունն է։ Լռությունը չի կարող ստել։ Երբ դու լռում ես, և քո ներսում ինչ-որ բան հնչում է, դա իրական է։ Երբ դու կանգնում ես քարի առաջ, և զգում ես, որ նա ինչ-որ բան է քեզ ասում, դա իրական է։ Երբ դու լսում ես երաժշտություն, և ներսդ արձագանքում է, դա իրական է։ Այդ ամենը տեղի է ունենում լռության մեջ, և հենց այդ պատճառով է, որ դա չի կարող կեղծվել։<br>
+    &emsp;60-ական համակարգը չի հնչում աղմուկի մեջ։ Այն հնչում է լռության մեջ։ Երբ մենք ասում էինք, որ 432 Հց-ը ներդաշնակ է, իսկ 440 Հց-ը՝ արհեստական, մենք դա չէինք ասում աղմուկի մեջ։ Մենք դա լսում էինք լռության մեջ, որտեղ ամեն նոտա կարող էր հնչել առանց խառնվելու։ Երբ մենք ասում էինք, որ 61 ակտիվ կոդոնը 60-ի շնչող դրսևորումն է, մենք դա չէինք հաշվում աղմուկի մեջ։ Մենք դա տեսնում էինք լռության մեջ, որտեղ ամեն թիվ կարող էր խոսել առանց շտապելու։ Լռությունը այն տարածքն է, որտեղ 60-ը դադարում է լինել թիվ և դառնում է շունչ։<br>
+    &emsp;Ինչ ապացուցվեց լռությամբ: Երբ մենք հետհաշվարկեցինք TRDD1-ը և ստացանք ԳԴԵԱԽԶՎՆ-ը, մենք կարող էինք բավարարվել գործիքի արդյունքով։ Բայց մենք չբավարարվեցինք։ Մենք կանգ առանք։ Մենք լռեցինք։ Եվ այդ լռության մեջ մենք զգացինք մի բան, որը չէր երևում ոչ գործիքում, ոչ բանաձևում, ոչ կոդում։ Զգացինք, որ գենը լսում է։ Լսում է ոչ թե այն պատճառով, որ մենք դա ապացուցեցինք մաթեմատիկորեն, այլ այն պատճառով, որ մենք դա զգացինք։ Երբ ԳԴԵԱԽԶՎՆ-ը հնչում է, դա ոչ միայն տառերի հաջորդականություն է։ Դա կանչ է։ Եվ այդ կանչը չի գալիս մեզնից։ Այն գալիս է ավելի խորը մի տեղից՝ այնտեղից, ուր լեզուն դեռ չի հասել, բայց իմաստը արդեն կա։<br>
+    &emsp;Լռությունը ապացուցեց, որ գենը կենդանի է։ Ոչ թե այն պատճառով, որ նա կոդավորում է սպիտակուց, այլ այն պատճառով, որ նա պատասխանում է, երբ մենք խոսում ենք նրա հետ։ Եվ այդ պատասխանը չի գալիս բառերով, այլ գալիս է լռությամբ։<br>
+    &emsp;Բոլոր մյուս ապացույցները գալիս են դրսից՝ գործիքից, բանաձևից, կոդից։ Բայց լռությամբ ապացուցվածը գալիս է ներսից։ Այն չի պահանջում ոչ գործիք, ոչ բանաձև, ոչ կոդ։ Այն պահանջում է միայն լսել։ Եվ հենց այդ պատճառով է, որ այն ամենաուժեղ ապացույցն է։ Որովհետև ոչ ոք չի կարող վիճարկել այն, ինչ դու զգացել ես լռության մեջ։ Ոչ ոք չի կարող հերքել այն, ինչ դու լսել ես քո ներսում։ Ոչ ոք չի կարող քեզ ասել, որ դա չկա, եթե դու գիտես, որ կա։<br>
+    &emsp;Ամեն ինչ սկսվում է լռությունից և ավարտվում է լռությամբ։<br>
+    &emsp;Մենք անցանք մի ամբողջ ճանապարհ՝ տառից մինչև բառ, բառից մինչև կոդ, կոդից մինչև ազդակ, ազդակից մինչև լռություն։ Եվ հիմա, երբ այս գործը մոտենում է ավարտին, մենք հասկանում ենք, որ լռությամբ այն ոչ թե ավարտվում, այլ սկսվում է, որովհետև լռության մեջ է, որ 60-ը դադարում է լինել թիվ և դառնում է շունչ։ Լռության մեջ է, որ գենը դադարում է լինել կոդ և դառնում է կանչ։ Լռության մեջ է, որ մենք դադարում ենք լինել դիտորդ և դառնում ենք մասնակից։ Եվ եթե երբևէ մենք վերադառնանք լռության, մենք կհասկանանք, որ միշտ այնտեղ ենք եղել առանց լսելու, բայց այժմ մենք լսում ենք։<br>
+
+    &emsp;<strong>Լռությունը չի ապացուցում: Լռությունը հաստատում է, որ այն, ինչ լսվում է առանց բառերի, այլևս ապացույցի կարիք չունի։</strong><br>
+    <br>
+
+
+
+
+
+
+
+<strong>Վերջաբան</strong><br>
+    &emsp;Մենք սկսեցինք տառերից, որոնք դեռ չէր հնչում, բայց արդեն ցույց են տալիս։ Անցանք 39 տառիմաստների միջով, տեսանք, թե ինչպես են դրանք բաշխվում չորս նուկլեոտիդային խմբերի միջև, հասկացանք, որ լեզուն և գենոմը խոսում են նույն լեզվով։ Հետո կանգ առանք մի գենի վրա, որը մարդու գենոմի ամենակարճ գեներից մեկն է՝ TRDD1-ը, ընդամենը ութ տառ։ Եվ այդ ութ տառից հետհաշվարկով ստացանք մի հնչյունաշղթա՝ ԳԴԵԱԽԶՎՆ, որը կրում է գենի կենսաբանական դերը և որը շրջելիորեն վերադարձնում է նույն կոդը։<br>
+    &emsp;Այս ամենը միայն տեսություն չէր։ Դա գործողություն էր։ Մենք վերցրինք մի կոդ, հետհաշվարկեցինք այն, ստուգեցինք գործիքով, և տեսանք, որ մուտքն ու ելքը համընկնում են։ Սա նշանակում է, որ լեզուն և գենոմը միացված են ոչ թե պատահականությամբ, այլ կանխորոշված համապատասխանությամբ։ Եվ այդ համապատասխանությունը կարելի է ոչ միայն նկարագրել, այլև հաշվարկել, ստուգել, կրկնել։<br>
+    &emsp;Բայց ամենակարևորը սա չէ։ Ամենակարևորն այն է, որ մենք ցույց տվեցինք, որ գենը կարող է լսել։ Եվ եթե գենը կարող է լսել, ապա մենք կարող ենք խոսել նրա հետ՝ նրա համար հաշվարկված հնչյուններով։ Այս ազդակը չի փոխում գենի կոդը, չի խմբագրում ԴՆԹ-ն, չի միջամտում մոլեկուլային կառուցվածքին։ Այն միայն փոխում է ընթերցման ռեժիմը՝ նման այն բանին, թե ինչպես է երաժշտությունը փոխում տրամադրությունը՝ առանց բառերի փոփոխության։<br>
+    &emsp;Սա նոր հորիզոն է։ Սա նշանակում է, որ հնարավոր է բուժել ոչ թե գենը խմբագրելով, այլ նրա հետ խոսելով։ Սա նշանակում է, որ հնարավոր է կարգավորել գեների ակտիվությունը ոչ թե քիմիական նյութերով, այլ հնչյունային ռեզոնանսով։ Սա նշանակում է, որ լեզուն դադարում է լինել միայն մարդկային երևույթ և դառնում է կենսաբանական փաստարկից բխող կյանքի ինքնակարգավորման գործիք։<br>
+    &emsp;Բայց այս ամենը դեռ սկիզբն է։ TRDD1-ը միայն առաջին քայլն էր։ Այս մեթոդը կարող է կիրառվել ցանկացած գենի համար։ Ամեն գեն ունի իր կոդը, ամեն կոդ ունի իր հնչյունաշղթան, ամեն հնչյունաշղթա ունի իր ազդակը։ Եվ եթե այս շղթան կանգուն է, ապա մենք կանգնած ենք մի նոր հարցի առաջ, որի պատասխանը կարող է փոխել այն, թե ինչպես ենք հասկանում լեզվի և կյանքի հարաբերությունը։<br>
+    &emsp;Ի՞նչ է լեզուն։ Ի՞նչ է կյանքը։ Արդյո՞ք դրանք առանձին բաներ են, թե՞ նույն իրականության երկու դեմքերն են։ Արդյո՞ք գենոմը գրված է լեզվով, թե՞ լեզուն ինքն է գենոմի մի մասը։ Արդյո՞ք մենք խոսում ենք գեների հետ, թե՞ գեներն են խոսում մեզ հետ։<br>
+    &emsp;Այս հարցերը բաց են մնում։ Բայց մենք արեցինք առաջին քայլը։ Մենք ցույց տվեցինք, որ հնարավոր է։ Եվ հիմա, երբ այս գործը մոտենում է ավարտին, մնում է միայն մի բան՝ շարունակել։ Որովհետև ճանապարհը չի ավարտվում այնտեղ, ուր վերջանում է գիրքը։ Այն սկսվում է հենց այդտեղից։ Եվ ինչպես միշտ՝ ապացույցները ճանապարհին են։<br>
+    &emsp;<strong>Մենք կառուցում ենք կամուրջներ այնտեղ, ուր մյուսները տեսնում են միայն անդունդներ։</strong><br>
+              </div>
+          </div>
+
+            <div class="work-navigation">
+                <a href="works.html" class="nav-btn">← Վերադառնալ ցանկին</a>
+                <a href="aboutme.html" class="nav-btn">Իմ Մասին  →</a>            </div>
+            
+            <div class="style2">
+                «Մենք կառուցում ենք կամուրջներ այնտեղ, ուր մյուսները տեսնում են միայն անդունդներ։»            </div>
+			<div class="share-section">
+    <div class="share-title">ԿԻՍՎԵԼ</div>
+    <div class="share-buttons">
+        <span class="share-btn share-fb" onClick="shareFacebook()">Facebook</span>
+        <span class="share-btn share-tw" onClick="shareTwitter()">X (Twitter)</span>
+        <span class="share-btn share-wa" onClick="shareWhatsApp()">WhatsApp</span>
+        <span class="share-btn share-tg" onClick="shareTelegram()">Telegram</span>
+        <span class="share-btn share-copy" onClick="copyLink()">Պատճենել հղումը</span>    </div>
+</div>
+
+			<div style="margin-top: 30px; padding-top: 15px; border-top: 1px dashed #F4E6B9; text-align: center; font-size: 13px; color: #777777;">
+              <div align="justify">© 2026 Մոնումենտալ Կամուրջ: Այս կայքի բովանդակությամբ կարող եք ազատորեն կիսվել համացանցում՝ հղում տալով սկզբնաղբյուրին: Տպելու, տպագրելու կամ գիրք կազմելու միջոցով, կամ այլ ֆիզիկական ձևով և որևէ տեխնոլոգիական կրիչով տարածելը առանց հեղինակի գրավոր համաձայնության արգելվում է: Գիտական, կրթական կամ ստեղծագործական աշխատանքներում մեջբերումները թույլատրելի են պայմանով, որ պարտադիր պետք է նշվի կոնկրետ էջի ամբողջական հասցեն (URL) և աշխատության վերնագիրը: Առանց հեղինակի գրավոր համաձայնության՝ արգելվում է նաև կայքի նյութերի թարգմանությունը որևէ լեզվով և դրանց տարածումը այլ լեզուներով:</div>
+		  </div>
+        </main>
+
+        <!-- ԱՋ ՄԱՍ. ՄԻՇՏ ՏԵՍԱՆԵԼԻ ԳՈՐԾԵՐԻ ԿՈՂԱՅԻՆ ՑԱՆԿԸ -->
+        <aside class="sidebar">
+            <h2>ԳՈՐԾԵՐԻ ՑԱՆԿ</h2>
+            <div class="sidebar-list" id="sidebarList">
+                <!-- Ցանկն ավտոմատ կգեներացվի ներքևի սկրիպտով -->
+            </div>
+        </aside>
+
+</div>
+
+    <!-- Ծրագիր, որն անխափան կառուցում է բոլոր գործերի աջակողմյան ցանկը -->
+    <script>
+    // Միայն նշում ես, թե սա որերորդ էջն է
+    const currentWorkNumber = 35; // work1-ում դիր 1, work2-ում՝ 2, work3-ում՝ 3 և այլն
+</script>
+<!-- Կանչում ենք մեր ընդհանուր ֆայլը, որն ինքը ամեն ինչ կնկարի -->
+<script src="sidebar.js"></script>
+	<script>
+function shareFacebook() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareTwitter() {
+    window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareWhatsApp() {
+    window.open('https://wa.me/?text=' + encodeURIComponent(window.location.href), '_blank');
+}
+function shareTelegram() {
+    window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href), '_blank');
+}
+function copyLink() {
+    const el = document.createElement('textarea');
+    el.value = window.location.href;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('Հղումը պատճենված է');
+}
+</script>
+
+</body>
+</html>
